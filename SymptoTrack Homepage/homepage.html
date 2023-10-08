@@ -1,6 +1,17 @@
+<!--Name of Code artifact: homepage.html
+Description: This code is mainly for displaying all the different features on our hompepage.
+Authors: Ava Greene, Sree Kondi
+Date Creation : October 4, 2023
+Date Revised: Octuber 7, 2023
+Preconditions: No input needed. 
+Postconditions: No return values.
+-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Displays title of the page. -->
 <title>SymptoTrack Homepage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +25,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <body>
 
 <!-- Top menu -->
+<!-- The `<div class="w3-top">` element creates a fixed position container at the top of the page. Inside
+this container -->
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
     <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">Logout</div>
@@ -25,17 +38,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 <div class="w3-center">
   <!-- First Photo Grid-->
+  <!--This container contains an image and a heading for the Symptoms. -->
   <a href="TODO-link-here" class="w3-third button-link">
     <div class="w3-third button-container">
         <img src="log.jpeg" alt="log" style="width:100%">
         <h3>Log Symptoms</h3>
     </div>
 </a>
+<!--This container contains an image and a heading for the Graph. -->
 <a href="TODO-link-here" class="w3-third button-link">
     <div class="w3-third button-container">
       <img src="graph.jpeg" alt="graph" style="width:100%">
       <h3>Graph</h3>
     </div>
+<!--This container contains an image relating to "questionnarire" and a heading for the questionnaire. -->
 </a>
     <a href="TODO-link-here" class="w3-third button-link">
         <div class="w3-third button-container">
@@ -46,6 +62,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   </div>
   
   <!-- Second Photo Grid-->
+  <!--This container contains an image and a heading for the Journal. -->
   <div class="w3-row-padding w3-padding-16 w3-center">
     <a href="TODO-link-here" class="w3-third button-link">
         <div class="w3-third button-container">
@@ -53,12 +70,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <h3>Journal</h3>
     </div>
 </a>
+<!--This container contains an image and a heading for the Resources. -->
     <a href="TODO-link-here" class="w3-third button-link">
         <div class="w3-third button-container">
       <img src="stress.png" alt="destress" style="width:100%">
       <h3>Stress Resources</h3>
     </div>
 </a>
+
+<!--This container contains an image and a heading for the Medicine Tracker. -->
     <a href="TODO-link-here" class="w3-third button-link">
         <div class="w3-third button-container">
       <img src="meds.jpeg" alt="meds" style="width:100%">
