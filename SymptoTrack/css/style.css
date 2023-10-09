@@ -169,6 +169,11 @@ a {
 	text-decoration: none;
 	color: #7b6cd5;
 }
+/*Logo*/
+.template .logo-img {
+	max-width: 30%;
+	height: auto;
+}
 /*Service*/
 .template .service-section {
 	padding: 62px 15px;
