@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Symptom Input Page</title>
+</head>
+<body>
+
+<h2>Symptom Input</h2>
+
+<form>
+    <label for="slider">Rank your pain from one to ten:</label>
+    <input type="range" id="slider" name="slider" min="0" max="10" step="1" value="0">
+    <output for="slider" id="sliderValue">0</output>
+</form>
+
+<script>
+    const slider = document.getElementById('slider');
+    const output = document.getElementById('sliderValue');
+
+    // Display the initial slider value
+    output.textContent = slider.value;
+
+    // Update the slider value in real-time
+    slider.addEventListener('input', function() {
+        output.textContent = slider.value;
+    });
+</script>
+
+</body>
+</html>
