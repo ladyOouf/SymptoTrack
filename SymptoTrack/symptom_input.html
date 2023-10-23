@@ -1,12 +1,20 @@
+<!--Name of Code artifact: symptom_input.html
+Description: This code is responsible for getting the user's pain input.
+Authors: Ava G
+Date Creation : October 15, 2023
+Date Revised: October  21, 2023
+Preconditions: Empty Strings are not allowed.
+Postconditions: No return values. -->
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Symptom Input Page</title>
 </head>
 <body>
-
+<!--Page Heading-->
 <h2>Symptom Input</h2>
-
+<!--Creating the slider-->
 <form>
     <label for="slider">Rank your pain from one to ten:</label>
     <input type="range" id="slider" name="slider" min="0" max="10" step="1" value="0">
@@ -20,7 +28,7 @@
     // Display the initial slider value
     output.textContent = slider.value;
 
-    // Update the slider value in real-time
+    // Update the slider value in real time
     slider.addEventListener('input', function() {
         output.textContent = slider.value;
     });
