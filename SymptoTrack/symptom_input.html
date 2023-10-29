@@ -26,7 +26,12 @@ Postconditions: No return values. -->
     <!--Font-->
     <link rel="stylesheet" type="text/css" href="font/web-font.css"> <!-- Include web fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
-
+    <style>
+      form {
+          text-align: center;
+          font-size: 30px; /* You can adjust the font size as needed */
+      }
+    </style>
     <title>SymptoTrack</title> <!-- Set the title of the webpage -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico"> <!-- Favicon for web page. -->
   </head>
@@ -59,51 +64,24 @@ Postconditions: No return values. -->
           </div>
         </div>
       </div>
-     
+      <div>
+        <!--Page Heading-->
+    <br>
+    <p style="text-align:center; font-size: 30px;">Symptom Input</p>
+    <br>
+    <br>
+    <br>
+    <!--Creating the slider-->
       
-      <!DOCTYPE html>
-      <html>
-      <head>
-          <title>Symptom Input Page</title>
-      </head>
-      <style>
-        form {
-            text-align: center;
-            font-size: 30px; /* You can adjust the font size as needed */
-        }
-      </style>
-      <!--Page Heading-->
-      <br>
-      <p style="text-align:center; font-size: 30px;">Symptom Input</p>
-      <br>
-      <br>
-      <br>
-      <!--Creating the slider-->
-
       <form>
-          <label for="slider">Rank your pain from one to ten:</label>
-          <input type="range" id="slider" name="slider" min="0" max="10" step="1" value="0">
-          <output for="slider" id="sliderValue">0</output>
-      </form><br>
-      <br>
-      <br>
-      
-      <script>
-          const slider = document.getElementById('slider');
-          const output = document.getElementById('sliderValue');
-      
-          // Display the initial slider value
-          output.textContent = slider.value;
-      
-          // Update the slider value in real time
-          slider.addEventListener('input', function() {
-              output.textContent = slider.value;
-          });
-      </script>
-      
-      </body>
-      </html>
-      
+        <label for="slider">Rank your pain from one to ten:</label>
+        <input type="range" id="slider" name="slider" min="0" max="10" step="1" value="0">
+        <output for="slider" id="sliderValue">0</output>
+    </form><br>
+    <br>
+    <br>
+    </div>
+    
 
      
       <!--Copyright-->
@@ -130,5 +108,17 @@ Postconditions: No return values. -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!-- Include jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <!-- Include Popper.js library -->
     <script src="bootstrap/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+    <script>
+      const slider = document.getElementById('slider');
+      const output = document.getElementById('sliderValue');
+  
+      // Display the initial slider value
+      output.textContent = slider.value;
+  
+      // Update the slider value in real time
+      slider.addEventListener('input', function() {
+          output.textContent = slider.value;
+      });
+  </script>
   </body>
 </html>
