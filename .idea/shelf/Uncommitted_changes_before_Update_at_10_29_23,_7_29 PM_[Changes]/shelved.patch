@@ -1,0 +1,284 @@
+Index: SymptoTrack/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!--Name of Code artifact: Symtotrack.html\nDescription: This code is responsible for getting the user name and password.\nAuthors: Freshta Z, Sree K, Ava G\nDate Creation : September 20, 2023\nDate Revised: September 22, 2023\nPreconditions: Empty Strings are not allowed.\nPostconditions: No return values.\n\n\n\n-->\n<!-- This code is the HTML code for the head section of a web page. It includes meta tags for\ncharacter encoding, viewport settings, and description. It also includes links to external CSS files\nfor styling the page, as well as a link to an external font library. -->\n<!doctype html>\n<html lang=\"en\">\n  <head>\n    <!-- Required meta tags -->\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta name=\"description\" content=\"Free Template\">\n\n    <!-- Bootstrap CSS -->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"bootstrap/css/bootstrap.min.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"bootstrap/css/bootstrap-grid.css\">\n\n    <!--Stylesheet-->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/normailze.css\">\n    \n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/responsive.css\">\n    <!--Font-->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"font/web-font.css\">\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css\" rel=\"stylesheet\">\n\n    <title>SymptoTrack</title> <!--Title of the web page.-->\n    <link rel=\"icon\" type=\"iamge/x-icon\" href=\"../favicon.ico\"> <!--Favicon for web page.-->\n  </head>\n  <body>\n    <!-- The code is creating a banner section for the web page. It includes a top bar with\n    contact information (email and phone number), a logo, and a banner content section with a title and\n    description. The banner section is contained within a `<div>` element with a class of \"banner\". -->\n    <div class=\"main-container template\">\n      <!--Banner section-->\n      <div class=\"banner\">\n        <div class=\"banner-overlay\"></div>\n        <div class=\"inside-container top-bar\">\n          <div class=\"row\">\n            <div class=\"col-md-4 top-bar-left order-2 order-md-12\">\n              <i class=\"fas fa-envelope-open-text\"></i> \n              <a href=\"mailto:info@webdomus.net\">info.com</a>\n            </div>    \n            <div class=\"col-md-4 logo order-1 order-md-12\">\n              <img class=\"logo-img\" src=\"img/logo.png\" alt=\"SymptoTrack logo image\">\n            </div> \n            <div class=\"col-md-4 top-bar-right order-3 order-md-12\">\n              <i class=\"fas fa-phone-alt\"></i> \n              <a href=\"tel:+39.0874.484661\">+1 (785)979-7294</a>\n            </div>       \n          </div>      \n        </div>\n        <div class=\"inside-container banner-content\">\n          <div class=\"row\">\n            <div class=\"col-12 content-col\">\n              <h1 class=\"site-title\">Be peaceful in mind and healthy in Body!</h1>\n              <p class=\"site-title-desc\">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p>\n            </div>\n          </div>\n        </div>\n      </div>\n     \n      \n    \n <!-- This code  includes a form with two input\n fields for email and password, along with corresponding labels. It also includes two buttons, one\n for login and one for sign in. Additionally, there is a link for forgot password. -->\n    <!-- Form section -->\n    <div class=\"inside-container form-section\">\n      <div class=\"row\">\n        <div class=\"col-md-6\">\n          <form>\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label>\n              <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Email\">\n            </div>\n            <div class=\"form-group\">\n              <label for=\"password\">Password</label>\n              <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\">\n            </div>\n            <button type=\"submit\" class=\"btn btn-primary\">Login</button>  <!-- Button for Login -->\n            <button type=\"button\" class=\"btn btn-secondary\">Sign In</button>  <!-- Button for Sign in -->\n            <div class=\"form-group\">\n              <a href=\"#\" class=\"forgot-password\">Forgot Password?</a> \n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n     \n\n      <!--Copyright-->\n    <!-- This code is creating a footer section for the web page. It includes a copyright\n    statement, the name of the creator (SymptoTrack), and social media icons for Facebook, Twitter,\n    Google Plus, and LinkedIn. The footer is contained within a `<footer>` element and has a class of\n    \"footer\". -->\n      <footer class=\"footer\">\n        <div class=\"copyright\">\n          <div class=\"inside-container\">\n            <div class=\"row\">\n              <div class=\"col-md-6 order-2 order-md-12\">\n                <p>&copy; 2023 All Rights Reserved. Created by SymptoTrack <a href=\"\" class=\"created-by\"></a></p>\n              </div>\n              <div class=\"col-md-6 social order-1 order-md-12\">                \n                <a href=\"#\"><i class=\"fab fa-facebook-f\"></i></a>\n                <a href=\"#\"><i class=\"fab fa-twitter\"></i></a>\n                <a href=\"#\"><i class=\"fab fa-google-plus-g\"></i></a>\n                <a href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </footer>\n    </div>    \n    <!-- Optional JavaScript -->\n    <!-- jQuery first, then Popper.js, then Bootstrap JS -->\n    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n    <script src=\"bootstrap/js/bootstrap.min.js\"></script>\n  </body>\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SymptoTrack/index.html b/SymptoTrack/index.html
+--- a/SymptoTrack/index.html	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ b/SymptoTrack/index.html	(date 1698625628578)
+@@ -6,6 +6,7 @@
+ Preconditions: Empty Strings are not allowed.
+ Postconditions: No return values.
+ 
++ templates/home.html
+ 
+ 
+ -->
+@@ -123,6 +124,7 @@
+     </div>    
+     <!-- Optional JavaScript -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
++    <script src="static/script.js"></script>
+     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+     <script src="bootstrap/js/bootstrap.min.js"></script>
+Index: SymptoTrack/Sign up.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!--Name of Code artifact: Symtotrack.html\nDescription: This code is responsible for getting the user First name, Last name, Email, and password.\nAuthors: Freshta Zaheer\nDate Creation : Octuber 2, 2023\nDate Revised: Octuber 6, 2023\nPreconditions: Empty Strings are not allowed.\nPostconditions: No return values.\n\n\n\n-->\n<!doctype html>\n<html lang=\"en\">\n  <head>\n    <!-- Required meta tags -->\n    <meta charset=\"utf-8\"> <!-- Set the character encoding to UTF-8 -->\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"> <!-- Define viewport settings for responsive design -->\n    <meta name=\"description\" content=\"Free Template\"> <!-- Meta description for SEO -->\n\n    <!-- Bootstrap CSS -->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"bootstrap/css/bootstrap.min.css\"> <!-- Include Bootstrap CSS -->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"bootstrap/css/bootstrap-grid.css\"> <!-- Include Bootstrap Grid CSS -->\n\n    <!--Stylesheet-->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/normailze.css\"> <!-- Include a custom stylesheet (normalize) -->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/style.css\"> <!-- Include a custom stylesheet (style) -->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"css/responsive.css\"> <!-- Include a custom stylesheet (responsive) -->\n    \n    <!--Font-->\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"font/web-font.css\"> <!-- Include web fonts -->\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css\" rel=\"stylesheet\"> <!-- Include Font Awesome icons -->\n\n    <title>SymptoTrack</title> <!-- Set the title of the webpage -->\n    <link rel=\"icon\" type=\"image/x-icon\" href=\"../favicon.ico\"> <!-- Favicon for web page. -->\n  </head>\n  <body>\n    <div class=\"main-container template\">\n      <!--Banner section-->\n      <div class=\"banner\">\n        <div class=\"banner-overlay\"></div> <!-- Overlay for the banner -->\n        <div class=\"inside-container top-bar\">\n          <div class=\"row\">\n            <div class=\"col-md-4 top-bar-left order-2 order-md-12\">\n              <i class=\"fas fa-envelope-open-text\"></i> \n              <a href=\"mailto:info@webdomus.net\">info.com</a> <!-- Contact email link -->\n            </div>    \n            <div class=\"col-md-4 logo order-1 order-md-12\">\n              <img class=\"logo-img\" src=\"img/logo.png\" alt=\"SymptoTrack logo image\">\n            </div> \n            <div class=\"col-md-4 top-bar-right order-3 order-md-12\">\n              <i class=\"fas fa-phone-alt\"></i> \n              <a href=\"tel:+39.0874.484661\">+1 (785)979-7294</a> <!-- Contact phone link -->\n            </div>       \n          </div>      \n        </div>\n        <div class=\"inside-container banner-content\">\n          <div class=\"row\">\n            <div class=\"col-12 content-col\">\n              <h1 class=\"site-title\">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->\n              <p class=\"site-title-desc\">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> <!-- Site title description -->\n            </div>\n          </div>\n        </div>\n      </div>\n     \n      \n    \n    <!-- Form section -->\n      <!---This form will ask for user First name, last name, email, and password in order to sign up for the website--->\n    <div class=\"inside-container form-section\">\n      <div class=\"row\">\n        <div class=\"col-md-6\">\n          <form>\n            <div class=\"form-group\">\n              <label for=\"firstName\">First Name</label> <!-- Label for first name input -->\n              <input type=\"text\" class=\"form-control\" id=\"firstName\" name=\"firstName\" placeholder=\"First Name\"> <!-- First name input field -->\n            </div>\n            <div class=\"form-group\">\n              <label for=\"lastName\">Last Name</label> <!-- Label for last name input -->\n              <input type=\"text\" class=\"form-control\" id=\"lastName\" name=\"lastName\" placeholder=\"Last Name\"> <!-- Last name input field -->\n            </div>\n            <div class=\"form-group\">\n              <label for=\"email\">Email</label> <!-- Label for email input -->\n              <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\" placeholder=\"Email\"> <!-- Email input field -->\n            </div>\n            <div class=\"form-group\">\n              <label for=\"password\">Password</label> <!-- Label for password input -->\n              <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\"> <!-- Password input field -->\n            </div>\n            <a href=\"More info.html\" class=\"btn btn-primary\">Sign In</a> <!-- Sign-in button -->\n            <div class=\"form-group\">\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n     \n      <!--Copyright-->\n      <footer class=\"footer\">\n        <div class=\"copyright\">\n          <div class=\"inside-container\">\n            <div class=\"row\">\n              <div class=\"col-md-6 order-2 order-md-12\">\n                <p>&copy; 2023 All Rights Reserved. Created by <a href=\"\" class=\"created-by\"></a></p> <!-- Copyright notice -->\n              </div>\n              <div class=\"col-md-6 social order-1 order-md-12\">                \n                <a href=\"#\"><i class=\"fab fa-facebook-f\"></i></a> <!-- Social media icons -->\n                <a href=\"#\"><i class=\"fab fa-twitter\"></i></a>\n                <a href=\"#\"><i class=\"fab fa-google-plus-g\"></i></a>\n                <a href=\"#\"><i class=\"fab fa-linkedin-in\"></i></a>\n              </div>\n            </div>\n          </div>\n        </div>\n      </footer>\n    </div>    \n    <!-- Optional JavaScript -->\n    <!-- jQuery first, then Popper.js, then Bootstrap JS -->\n    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script> <!-- Include jQuery library -->\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script> <!-- Include Popper.js library -->\n    <script src=\"bootstrap/js/bootstrap.min.js\"></script> <!-- Include Bootstrap JavaScript -->\n  </body>\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SymptoTrack/Sign up.html b/SymptoTrack/Sign up.html
+--- a/SymptoTrack/Sign up.html	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ b/SymptoTrack/Sign up.html	(date 1698625628529)
+@@ -87,7 +87,7 @@
+               <label for="password">Password</label> <!-- Label for password input -->
+               <input type="password" class="form-control" id="password" name="password" placeholder="Password"> <!-- Password input field -->
+             </div>
+-            <a href="More info.html" class="btn btn-primary">Sign In</a> <!-- Sign-in button -->
++            <a href="More%20info.htmlml" class="btn btn-primary">Sign In</a> <!-- Sign-in button -->
+             <div class="form-group">
+             </div>
+           </form>
+Index: SymptoTrack/SymptoTrack_Database_Backend/.env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Unix:\nexport MONGODB_URI='mongodb+srv://ladyoouf:<insertpasswrordhere>@symptotrack.kakpoxc.mongodb.net/?retryWrites=true&w=majority'
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/.env b/SymptoTrack/SymptoTrack_Database_Backend/.env
+--- a/SymptoTrack/SymptoTrack_Database_Backend/.env	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ b/SymptoTrack/SymptoTrack_Database_Backend/.env	(date 1698529269696)
+@@ -1,2 +1,2 @@
+ # Unix:
+-export MONGODB_URI='mongodb+srv://ladyoouf:<insertpasswrordhere>@symptotrack.kakpoxc.mongodb.net/?retryWrites=true&w=majority'
+\ No newline at end of file
++export MONGODB_URI='mongodb+srv://ladyoouf:Hyunjin99!@symptotrack.kakpoxc.mongodb.net/?retryWrites=true&w=majority'
+\ No newline at end of file
+Index: SymptoTrack/SymptoTrack_Database_Backend/main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Prologue Comments\n# • Name of code artifact: SymptoTrack_Database_Backend\n# • Description: Establishes signal to MongoDb Cluster and Sample Collections. The code has sample lines to explain what\n#  each section does. These sections are mainly being used as a reference and will not be used for the website's code.\n# • Programmer’s name: Sarah Martinez\n# • Data of Creation: 10.22.2023\n# • Latest Revision: 10.22.2023\n# • Brief description of each revision & author\n# • Preconditions: Requires my password and username created on MongoDb in order to access the cluster\n#   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster\n#   Query setup: { field: 'value' }\n# • Postconditions: Currently in this code, I used a sample set collection on MongoDB to test out the pymongo package\n# • Return values: Depends on the query request\n# • Errors: No current errors unless document doesn't exist\n# • Side effects: None\n# • Invariants: None\n# • Any known faults: None\n\nimport os\n\nfrom pprint import pprint\nimport bson\nfrom datetime import datetime\nfrom dotenv import load_dotenv\nfrom pymongo import MongoClient\n\n# Load config from a .env file:\nload_dotenv()\nMONGODB_URI = os.environ['MONGODB_URI']\n\n# Connect to your MongoDB cluster:\nclient = MongoClient(MONGODB_URI)\n\n\n# Sends a ping to confirm a successful connection\ntry:\n    client.admin.command('ping')\n    print(\"Pinged your deployment. You successfully connected to MongoDB!\")\nexcept Exception as e:\n    print(e)\n\n# List all the databases in the cluster:\nfor db_info in client.list_database_names():\n    print(db_info)\n\n# # Get a reference to the 'sample_mflix' database:\n# db = client['sample_mflix']\n#\n# # List all the collections in 'sample_mflix':\n# collections = db.list_collection_names()\n# for collection in collections:\n#     print(collection)\n#\n# # Get a reference to the 'movies' collection:\n# movies = db['movies']\n#\n# # Get the document with the title 'Blacksmith Scene':\n# pprint(movies.find_one({'title': 'The Great Train Robbery'}))\n#\n# # Insert a document for the movie 'Parasite':\n# insert_result = movies.insert_one({\n#     \"title\": \"Parasite\",\n#     \"year\": 2020,\n#     \"plot\": \"A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks.\",\n#     \"released\": datetime(2020, 2, 7, 0, 0, 0),\n# })\n#\n# # Save the inserted_id of the document you just created:\n# parasite_id = insert_result.inserted_id\n# print(\"_id of inserted document: {parasite_id}\".format(parasite_id=parasite_id))\n# print(movies.find_one({'_id': bson.ObjectId(parasite_id)}))\n#\n# # Look up the documents you've created in the collection:\n# for doc in movies.find({\"title\": \"Parasite\"}):\n#     pprint(doc)\n#\n# # Update all the Parasite movie docs to the correct year:\n# update_result = movies.update_many({\"title\": \"Parasite\"}, {\"$set\": {\"year\": 2019}})\n# # # Update the document with the correct year:\n#\n# # Print out the updated record to make sure it's correct:\n# pprint(movies.find_one({'_id': bson.ObjectId(parasite_id)}))\n#\n# # Deletes all entries titled 'Parasite':\n# movies.delete_many({\"title\": \"Parasite\"})\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/main.py b/SymptoTrack/SymptoTrack_Database_Backend/main.py
+--- a/SymptoTrack/SymptoTrack_Database_Backend/main.py	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ b/SymptoTrack/SymptoTrack_Database_Backend/main.py	(date 1698625628539)
+@@ -17,10 +17,10 @@
+ # • Any known faults: None
+ 
+ import os
++from flask import Flask, render_template
++import config
+ 
+-from pprint import pprint
+ import bson
+-from datetime import datetime
+ from dotenv import load_dotenv
+ from pymongo import MongoClient
+ 
+@@ -28,9 +28,14 @@
+ load_dotenv()
+ MONGODB_URI = os.environ['MONGODB_URI']
+ 
+-# Connect to your MongoDB cluster:
++# # Connect to your MongoDB cluster:
+ client = MongoClient(MONGODB_URI)
+ 
++app = Flask(__name__)
++
++app.template_folder = "../templates"
++app.static_folder = "../static"
++
+ 
+ # Sends a ping to confirm a successful connection
+ try:
+@@ -39,47 +44,25 @@
+ except Exception as e:
+     print(e)
+ 
+-# List all the databases in the cluster:
++# # List all the databases in the cluster:
+ for db_info in client.list_database_names():
+     print(db_info)
+ 
+-# # Get a reference to the 'sample_mflix' database:
+-# db = client['sample_mflix']
+-#
+-# # List all the collections in 'sample_mflix':
+-# collections = db.list_collection_names()
+-# for collection in collections:
+-#     print(collection)
+-#
+-# # Get a reference to the 'movies' collection:
+-# movies = db['movies']
+-#
+-# # Get the document with the title 'Blacksmith Scene':
+-# pprint(movies.find_one({'title': 'The Great Train Robbery'}))
+-#
+-# # Insert a document for the movie 'Parasite':
+-# insert_result = movies.insert_one({
+-#     "title": "Parasite",
+-#     "year": 2020,
+-#     "plot": "A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks.",
+-#     "released": datetime(2020, 2, 7, 0, 0, 0),
+-# })
+-#
+-# # Save the inserted_id of the document you just created:
+-# parasite_id = insert_result.inserted_id
+-# print("_id of inserted document: {parasite_id}".format(parasite_id=parasite_id))
+-# print(movies.find_one({'_id': bson.ObjectId(parasite_id)}))
+-#
+-# # Look up the documents you've created in the collection:
+-# for doc in movies.find({"title": "Parasite"}):
+-#     pprint(doc)
+-#
+-# # Update all the Parasite movie docs to the correct year:
+-# update_result = movies.update_many({"title": "Parasite"}, {"$set": {"year": 2019}})
+-# # # Update the document with the correct year:
++
++# @app.route("/")
++# def home():
++#     return render_template('index.html')
++# @app.route('/', methods=['GET'])
++# def check_signal():
++#     return jsonify({'message': 'Signal received from the frontend'})
+ #
+-# # Print out the updated record to make sure it's correct:
+-# pprint(movies.find_one({'_id': bson.ObjectId(parasite_id)}))
+-#
+-# # Deletes all entries titled 'Parasite':
+-# movies.delete_many({"title": "Parasite"})
++
++@app.route('/')
++def index():
++    return render_template('../index.html')
++
++
++if __name__ == "__main__":
++    app.run(host="0.0.0.0", port=5000, debug=True)
++
++
+Index: SymptoTrack/SymptoTrack_Database_Backend/.idea/misc.xml
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/.idea/misc.xml b/SymptoTrack/SymptoTrack_Database_Backend/.idea/misc.xml
+deleted file mode 100644
+--- a/SymptoTrack/SymptoTrack_Database_Backend/.idea/misc.xml	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ /dev/null	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Black">
+-    <option name="sdkName" value="Python 3.9 (pythonProject1)" />
+-  </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (venv)" project-jdk-type="Python SDK" />
+-</project>
+\ No newline at end of file
+Index: SymptoTrack/SymptoTrack_Database_Backend/.idea/pythonProject1.iml
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/.idea/pythonProject1.iml b/SymptoTrack/SymptoTrack_Database_Backend/.idea/pythonProject1.iml
+deleted file mode 100644
+--- a/SymptoTrack/SymptoTrack_Database_Backend/.idea/pythonProject1.iml	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ /dev/null	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/venv" />
+-    </content>
+-    <orderEntry type="jdk" jdkName="Python 3.9 (venv)" jdkType="Python SDK" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: SymptoTrack/SymptoTrack_Database_Backend/.idea/inspectionProfiles/profiles_settings.xml
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/.idea/inspectionProfiles/profiles_settings.xml b/SymptoTrack/SymptoTrack_Database_Backend/.idea/inspectionProfiles/profiles_settings.xml
+deleted file mode 100644
+--- a/SymptoTrack/SymptoTrack_Database_Backend/.idea/inspectionProfiles/profiles_settings.xml	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ /dev/null	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
+@@ -1,6 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <settings>
+-    <option name="USE_PROJECT_PROFILE" value="false" />
+-    <version value="1.0" />
+-  </settings>
+-</component>
+\ No newline at end of file
+Index: SymptoTrack/SymptoTrack_Database_Backend/.idea/modules.xml
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/.idea/modules.xml b/SymptoTrack/SymptoTrack_Database_Backend/.idea/modules.xml
+deleted file mode 100644
+--- a/SymptoTrack/SymptoTrack_Database_Backend/.idea/modules.xml	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ /dev/null	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/pythonProject1.iml" filepath="$PROJECT_DIR$/.idea/pythonProject1.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: SymptoTrack/SymptoTrack_Database_Backend/.idea/vcs.xml
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/.idea/vcs.xml b/SymptoTrack/SymptoTrack_Database_Backend/.idea/vcs.xml
+deleted file mode 100644
+--- a/SymptoTrack/SymptoTrack_Database_Backend/.idea/vcs.xml	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ /dev/null	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: SymptoTrack/SymptoTrack_Database_Backend/.idea/.gitignore
+===================================================================
+diff --git a/SymptoTrack/SymptoTrack_Database_Backend/.idea/.gitignore b/SymptoTrack/SymptoTrack_Database_Backend/.idea/.gitignore
+deleted file mode 100644
+--- a/SymptoTrack/SymptoTrack_Database_Backend/.idea/.gitignore	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
++++ /dev/null	(revision 90d119b19d6ca27d0564c173e8c3db7bae8a72e2)
+@@ -1,8 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: SymptoTrack/static/script.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/SymptoTrack/static/script.js b/SymptoTrack/static/script.js
+new file mode 100644
+--- /dev/null	(date 1698623823780)
++++ b/SymptoTrack/static/script.js	(date 1698623823780)
+@@ -0,0 +1,16 @@
++async function checkSignal() {
++    try {
++        // Use a relative URL to make requests to the same host and port
++        const response = await fetch("/");
++
++        if (response.ok) {
++            console.log('Signal received from the backend!');
++        } else {
++            console.error('Request failed with status:', response.status);
++        }
++    } catch (error) {
++        console.error('Error checking signal:', error);
++    }
++}
++
++window.addEventListener('load', checkSignal);
