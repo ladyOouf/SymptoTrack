@@ -16,11 +16,9 @@
 # • Invariants: None
 # • Any known faults: None
 
+from flask import Flask, render_template, request, redirect
 import os
 
-from pprint import pprint
-import bson
-from datetime import datetime
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
@@ -30,7 +28,10 @@ MONGODB_URI = os.environ['MONGODB_URI']
 
 # Connect to your MongoDB cluster:
 client = MongoClient(MONGODB_URI)
+app = Flask(__name__)
 
+app.template_folder = "../templates"
+app.static_folder = "../static"
 
 # Sends a ping to confirm a successful connection
 try:
@@ -43,43 +44,22 @@ except Exception as e:
 for db_info in client.list_database_names():
     print(db_info)
 
-# # Get a reference to the 'sample_mflix' database:
-# db = client['sample_mflix']
-#
-# # List all the collections in 'sample_mflix':
-# collections = db.list_collection_names()
-# for collection in collections:
-#     print(collection)
-#
-# # Get a reference to the 'movies' collection:
-# movies = db['movies']
-#
-# # Get the document with the title 'Blacksmith Scene':
-# pprint(movies.find_one({'title': 'The Great Train Robbery'}))
-#
-# # Insert a document for the movie 'Parasite':
-# insert_result = movies.insert_one({
-#     "title": "Parasite",
-#     "year": 2020,
-#     "plot": "A poor family, the Kims, con their way into becoming the servants of a rich family, the Parks.",
-#     "released": datetime(2020, 2, 7, 0, 0, 0),
-# })
-#
-# # Save the inserted_id of the document you just created:
-# parasite_id = insert_result.inserted_id
-# print("_id of inserted document: {parasite_id}".format(parasite_id=parasite_id))
-# print(movies.find_one({'_id': bson.ObjectId(parasite_id)}))
-#
-# # Look up the documents you've created in the collection:
-# for doc in movies.find({"title": "Parasite"}):
-#     pprint(doc)
-#
-# # Update all the Parasite movie docs to the correct year:
-# update_result = movies.update_many({"title": "Parasite"}, {"$set": {"year": 2019}})
-# # # Update the document with the correct year:
-#
-# # Print out the updated record to make sure it's correct:
-# pprint(movies.find_one({'_id': bson.ObjectId(parasite_id)}))
-#
-# # Deletes all entries titled 'Parasite':
-# movies.delete_many({"title": "Parasite"})
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/add_email', methods=['POST'])
+def add_email():
+    email = request.form.get('email')  # Get the email from the form
+    if email:
+        # Assuming you have a MongoDB collection called "emails"
+        emails_collection = client.get_database().get_collection('emails')
+        # Insert the email into the collection
+        emails_collection.insert_one({'email': email})
+    return redirect('/')  # Redirect back to the homepage after adding the email
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
