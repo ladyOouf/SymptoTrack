@@ -31,6 +31,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,6 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "sprint4",
     "last_opened_file_path": "/Users/binbin/SymptoTrack_Repo/SymptoTrack/SymptoTrack/SymptoTrack_Database_Backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -75,7 +81,7 @@
       <recent name="$PROJECT_DIR$/SymptoTrack/templates" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.script.js">
     <configuration name="script.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/SymptoTrack/static/script.js" working-dir="$PROJECT_DIR$/SymptoTrack/SymptoTrack_Database_Backend">
       <method v="2" />
     </configuration>
@@ -123,6 +129,7 @@
       <workItem from="1698626045165" duration="3753000" />
       <workItem from="1699129051025" duration="203000" />
       <workItem from="1699129259024" duration="4050000" />
+      <workItem from="1699133330467" duration="714000" />
     </task>
     <servers />
   </component>
