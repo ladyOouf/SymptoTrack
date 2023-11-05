@@ -52,13 +52,11 @@ def index():
 
 @app.route('/add_email', methods=['POST'])
 def add_email():
-    email = request.form.get('email')  # Get the email from the form
+    email = request.form.get('email')
     if email:
-        # Assuming you have a MongoDB collection called "emails"
         emails_collection = client.get_database().get_collection('emails')
-        # Insert the email into the collection
         emails_collection.insert_one({'email': email})
-    return redirect('/')  # Redirect back to the homepage after adding the email
+    return redirect('/')  
 
 
 if __name__ == "__main__":
