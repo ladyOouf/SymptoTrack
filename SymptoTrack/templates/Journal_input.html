@@ -2,7 +2,7 @@
 Description: This code is responsible for getting the user daily journal data
 Authors: Freshta Z
 Date Creation : October 28, 2023
-Date Revised: November  1, 2023
+Date Revised: November  4, 2023
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -10,41 +10,44 @@ Postconditions: No return values.
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8"> <!-- Define character encoding as UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Configure viewport settings for responsive design -->
+    <meta charset="utf-8"> <!-- Set the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Define viewport settings for responsive design -->
     <meta name="description" content="Free Template"> <!-- Meta description for SEO -->
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/normailze.css"> <!-- Include a custom stylesheet (normalize) -->
-    <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- Include a custom stylesheet (style) -->
-    <link rel="stylesheet" type="text/css" href="css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->    
-    <!-- Font -->
-    <link rel="stylesheet" type="text/css" href="font/web-font.css"> <!-- Include web fonts -->
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../static/css/normailze.css"> <!-- Include a custom stylesheet (normalize) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"> <!-- Include a custom stylesheet (style) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->
+    
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../static/font/web-font.css"> <!-- Include web fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
 
     <title>SymptoTrack</title> <!-- Set the title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico"> <!-- Favicon for web page. -->
   </head>
   <body>
     <div class="main-container template">
-      <!-- Banner section -->
+      <!--Banner section-->
       <div class="banner">
         <div class="banner-overlay"></div> <!-- Overlay for the banner -->
         <div class="inside-container top-bar">
           <div class="row">
             <div class="col-md-4 top-bar-left order-2 order-md-12">
               <i class="fas fa-envelope-open-text"></i> 
-              <a href="mailto:info@webdomus.net">info.com</a> <!-- Email contact link -->
+              <a href="mailto:info@webdomus.net">info.com</a> <!-- Contact email link -->
             </div>    
             <div class="col-md-4 logo order-1 order-md-12">
-              <img class="logo-img" src="" alt=""> <!-- Logo image (currently empty) -->
+              <img class="logo-img" src="../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
             </div> 
             <div class="col-md-4 top-bar-right order-3 order-md-12">
               <i class="fas fa-phone-alt"></i> 
-              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Phone contact link -->
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Contact phone link -->
+              <p id="date"></p>
             </div>       
           </div>      
         </div>
@@ -52,7 +55,7 @@ Postconditions: No return values.
           <div class="row">
             <div class="col-12 content-col">
               <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
-              <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> <!-- Site title description -->
+              <!-- <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> Site title description -->
             </div>
           </div>
         </div>
