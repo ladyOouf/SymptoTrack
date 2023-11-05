@@ -1,6 +1,5 @@
 async function checkSignal() {
     try {
-        // Use a relative URL to make requests to the same host and port
         const response = await fetch("/");
 
         if (response.ok) {
