@@ -1,0 +1,173 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"> <!-- Set the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Define viewport settings for responsive design -->
+    <meta name="description" content="Free Template"> <!-- Meta description for SEO -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../static/css/normailze.css"> <!-- Include a custom stylesheet (normalize) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"> <!-- Include a custom stylesheet (style) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->
+    
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../static/font/web-font.css"> <!-- Include web fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
+
+    <title>SymptoTrack</title> <!-- Set the title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico"> <!-- Favicon for web page. -->
+  </head>
+  <body>
+    <div class="main-container template">
+      <!--Banner section-->
+      <div class="banner">
+        <div class="banner-overlay"></div> <!-- Overlay for the banner -->
+        <div class="inside-container top-bar">
+          <div class="row">
+            <div class="col-md-4 top-bar-left order-2 order-md-12">
+              <i class="fas fa-envelope-open-text"></i> 
+              <a href="mailto:info@webdomus.net">info.com</a> <!-- Contact email link -->
+            </div>    
+            <div class="col-md-4 logo order-1 order-md-12">
+              <a href="Homepage.html">
+                <img class="logo-img" src="../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
+              </a>
+            </div> 
+            <div class="col-md-4 top-bar-right order-3 order-md-12">
+              <i class="fas fa-phone-alt"></i> 
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Contact phone link -->
+              <p id="date"></p>
+            </div>       
+          </div>      
+        </div>
+        <div class="inside-container banner-content">
+          <div class="row">
+            <div class="col-12 content-col">
+              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
+              <!-- <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> Site title description -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+<head>
+  <title>Symptom Input Page</title>
+  <style>
+    .heading-center {
+        text-align: center;
+        font-size: 25px; /* Adjust the font size as needed */
+    }
+
+    .text-center {
+        text-align: center;
+        font-size: 15px; /* Adjust the font size as needed */
+    }
+  </style>
+</head>
+
+<body>
+<div class="container my-5">
+    <div class="heading-center">
+        <!-- The title of the journal section -->
+      <h1 class="text-dark">Symptom Questionnaire</h1>
+    </div>
+    <br>
+    <div class="text-center">
+        <p>The answers to this questionnaire will be stored alongside the date. Feel free to only answer the questions you'd like to.</p>
+        <br>
+    </div>
+    <div>
+        <p> The first set of questions will get a glimpse into more ways your pain showed up than just the intensity level:</p><br>
+    </div>
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Pain Assessment Form</title>
+    </head>
+    <body>
+        <form>
+            <!-- Question 1 -->
+            <label for="walkPainFree">How many minutes can you walk without pain?</label>
+            <input type="number" id="walkPainFree" name="walkPainFree" min="0" placeholder="Minutes"><br><br>
+    
+            <!-- Question 2 -->
+            <label for="standPainFree">How many minutes can you stand without pain?</label>
+            <input type="number" id="standPainFree" name="standPainFree" min="0" placeholder="Minutes"><br><br>
+    
+            <!-- Question 3 -->
+            <label for="sitPainFree">How many minutes can you sit without pain?</label>
+            <input type="number" id="sitPainFree" name="sitPainFree" min="0" placeholder="Minutes"><br><br>
+    
+            <!-- Question 4 -->
+            <label for="painAreas">What area(s) are the pain in?</label><br>
+            <input type="checkbox" id="back" name="painAreas" value="back">
+            <label for="back">Back</label><br>
+            <input type="checkbox" id="shoulders" name="painAreas" value="shoulders">
+            <label for="shoulders">Shoulders</label><br>
+            <input type="checkbox" id="knees" name="painAreas" value="knees">
+            <label for="knees">Knees</label><br>
+            <input type="checkbox" id="neck" name="painAreas" value="neck">
+            <label for="neck">Neck</label><br>
+            <input type="checkbox" id="otherCheckbox" name="painAreas" value="other" onclick="toggleOtherTextbox()">
+            <label for="otherCheckbox">Other</label>
+            <input type="text" id="otherText" name="otherText" style="display: none;"><br><br>
+    
+    
+            <!-- Question 5 -->
+            <label for="sleepDisturbance">Has the pain kept you from sleeping?</label>
+            <input type="checkbox" id="sleepDisturbance" name="sleepDisturbance"><br><br>
+    
+            <!-- Question 6 -->
+            <label>How would you describe the pain?</label><br>
+            <input type="checkbox" id="aching" name="painType" value="aching">
+            <label for="aching">Aching</label><br>
+            <input type="checkbox" id="sharp" name="painType" value="sharp">
+            <label for="sharp">Sharp</label><br>
+            <input type="checkbox" id="dull" name="painType" value="dull">
+            <label for="dull">Dull</label><br>
+            <input type="checkbox" id="shooting" name="painType" value="shooting">
+            <label for="shooting">Shooting</label><br><br>
+    
+            <!-- Question 7 -->
+            <label for="painFrequency">Is the pain constant or occasional?</label>
+            <select id="painFrequency" name="painFrequency">
+                <option value="constant">Constant</option>
+                <option value="occasional">Occasional</option>
+            </select><br><br>
+    
+            <!-- Question 8 -->
+            <label for="painLocation">Does the pain stay in one place or radiate?</label>
+            <select id="painLocation" name="painLocation">
+                <option value="stationary">Stays in one place</option>
+                <option value="radiate">Radiates</option>
+            </select><br><br>
+    
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+          function toggleOtherTextbox() {
+              var checkbox = document.getElementById("otherCheckbox");
+              var text = document.getElementById("otherText");
+              if (checkbox.checked) {
+                  text.style.display = "block";
+              } else {
+                  text.style.display = "none";
+              }
+          }
+      </script>
+    </body>
+    </html>
+    
+</div>
+</body>
+</html>
+
