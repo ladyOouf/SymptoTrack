@@ -75,7 +75,7 @@ a {
 	color: #666;
 	font-weight: bold;
 	text-align: center;
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 /*Forms*/
 .form-section {
@@ -91,6 +91,11 @@ a {
 .form-group {
 	text-align: left;
 	margin-bottom: 15px;
+}
+.form-img img {
+	max-width: 30%;
+	height: auto;
+	padding-bottom: 20px;
 }
 input[type="text"],
 textarea,
