@@ -2,7 +2,7 @@
 Description: This code is responsible for getting the user's pain input.
 Authors: Ava G, Sree Kondi
 Date Creation : October 15, 2023
-Date Revised: November 4, 2023
+Date Revised: November 17, 2023
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values. -->
 
@@ -75,7 +75,7 @@ Postconditions: No return values. -->
       </style>
       <!--Page Heading-->
       <br>
-      <p style="text-align:center; font-size: 30px;">Symptom Input</p>
+      <p style="text-align:center; font-size: 30px; font-family: Apple Chancery;">Symptom Input</p>
       <br>
       <br>
       <br>
@@ -91,7 +91,7 @@ Postconditions: No return values. -->
       <!--Creating the slider-->
 
         <form>
-            <label for="slider">Rank your pain from one to ten:</label>
+            <label for="slider" style = "font-family : Apple Chancery;">Rank your pain from one to ten:</label>
             <input type="range" id="slider" name="slider" min="0" max="10" step="1" value="0">
             <output for="slider" id="sliderValue">0</output>
         </form><br>
@@ -110,7 +110,7 @@ Postconditions: No return values. -->
 
         <!-- add button -->
         <div class="container my-5">
-          <button id="addSliderButton" class="btn btn-primary">Add</button>
+          <button id="addSliderButton" class="btn btn-primary">Add more symptoms</button>
         </div>
         <!-- <a href="Homepage.html" class="btn btn-primary">Submit</a> -->
       </div>
