@@ -1,4 +1,11 @@
-
+<!--Name of Code artifact: questionnaire.html
+Description: This code asks the user questions about their symptom.
+Authors: Ava G
+Date Creation : November 17, 2023
+Date Revised: November  19, 2023
+Preconditions: Empty Strings are not allowed.
+Postconditions: No return values.
+-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -60,6 +67,7 @@
 <head>
   <title>Symptom Input Page</title>
   <style>
+    {% comment %} sets format {% endcomment %}
     .heading-center {
         text-align: center;
         font-size: 25px; /* Adjust the font size as needed */
@@ -80,6 +88,7 @@
     </div>
     <br>
     <div class="text-center">
+      {% comment %} page description {% endcomment %}
         <p>The answers to this questionnaire will be stored alongside the date. Feel free to only answer the questions you'd like to.</p>
         <br>
     </div>
@@ -94,6 +103,7 @@
         <title>Pain Assessment Form</title>
     </head>
     <body>
+      {% comment %} All of the questions are following. They allow user input. {% endcomment %}
         <form>
             <!-- Question 1 -->
             <label for="walkPainFree">How many minutes can you walk without pain?</label>
@@ -154,6 +164,7 @@
             <input type="submit" value="Submit">
         </form>
         <script>
+          {% comment %} The other check box, once the user click other an empty text box pops up allowing them to write the description for other {% endcomment %}
           function toggleOtherTextbox() {
               var checkbox = document.getElementById("otherCheckbox");
               var text = document.getElementById("otherText");
