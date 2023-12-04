@@ -12,36 +12,23 @@
 # • Any known faults: revamping the entire set up the site, the script.js and jqueries are sending status codes 500 and
 # 404, regardless of what I've done, I can't remove it and it's likely due to the set up the files and the script.js
 
-from flask import Flask, session, redirect
-from functools import wraps
-from dotenv import load_dotenv
-import os
+from flask import render_template, session
+# from flaskapp import app, login_required
+from SymptoTrack_Database_Backend.main import *
 
-from pymongo import MongoClient
-
-app = Flask(__name__)
-
-load_dotenv()
-MONGODB_URI = os.environ['MONGODB_URI']
-
-# Connect to your MongoDB cluster:
-client = MongoClient(MONGODB_URI)
-db = client['symptotrack']
-users = db['user_creds']
-
-app.secret_key = b'\xcc^\x91\xea\x17-\xd0W\x03\xa7\xf8J0\xac8\xc5'
+app.template_folder = "../templates"
+app.static_folder = "../static"
 
 
-# Decorators
-def login_required(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            return redirect('/')
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    return wrap
 
-# Database
+@app.route('/homepage')
+def homepage():
+    return render_template('Homepage.html')
 
+
+if __name__ == '__main__':
+    app.run(debug=True)
