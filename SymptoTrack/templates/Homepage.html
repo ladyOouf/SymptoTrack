@@ -2,7 +2,7 @@
 Description: This code is This page is responsible for providing easy access to our services through intuitive buttons and a user-friendly interface, ensuring a seamless experience for our visitors.
 Authors: Freshta Z, Ava G, Sree K
 Date Creation : October 2, 2023
-Date Revised: October 21, 2023
+Date Revised: December 1, 2023
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -61,7 +61,28 @@ Postconditions: No return values.
               <p id="date"></p>
             </div>       
           </div>      
+          <div class="motivational-quote-container">
+            <p class="motivational-quote" id="motivationalQuote"></p>
+          </div>
+          <script>
+            // Fetch and display a motivational quote
+            fetch('https://type.fit/api/quotes')
+              .then(response => response.json())
+              .then(data => {
+                // Get a random quote from the array
+                const randomIndex = Math.floor(Math.random() * data.length);
+                const randomQuote = data[randomIndex].text;
+        
+                // Display the quote with white text
+                const quoteElement = document.getElementById('motivationalQuote');
+                quoteElement.textContent = randomQuote;
+                quoteElement.style.color = 'Black'; // Set text color to white
+                quoteElement.alignment = center;
+              })
+              .catch(error => console.error('Error fetching motivational quote:', error));
+          </script>
         </div>
+        
         <div class="inside-container banner-content">
           <div class="row">
             <div class="col-12 content-col">
