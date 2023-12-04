@@ -17,6 +17,13 @@ body {
 	font-weight: normal;
 	text-align: left;
 }
+.banner {
+	background-color: var(--primary-color);
+  }
+  
+h1.site-title {
+	color: var(--primary-color);
+}
 h1,h2,h3,
 h4,h5,h6 {
 	font-size: inherit;
