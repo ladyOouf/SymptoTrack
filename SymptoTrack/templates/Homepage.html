@@ -29,6 +29,12 @@ Postconditions: No return values.
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
 
     <title>SymptoTrack</title> <!-- Set the title of the webpage -->
+    <style>
+      :root {
+        --primary-color: #007bff; /* Default primary color */
+      }
+    </style>
+
     <link rel="icon" type="image/x-icon" href="../static/favicon.ico"> <!-- Favicon for web page. -->
   </head>
 
@@ -60,6 +66,10 @@ Postconditions: No return values.
             <div class="col-12 content-col">
               <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
               <!-- <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> Site title description -->
+            <div class="color-picker-container">
+                <label for="color-picker">Choose a color:</label>
+                <input type="color" id="color-picker" value="#007bff">
+              </div>
             </div>
              <!-- JavaScript Code for displaying current date-->
             <script>
@@ -254,6 +264,14 @@ Postconditions: No return values.
     <!-- Optional JavaScript -->
     <script src="../static/js/script.js"></script> <!-- establishes script.js connection, Sarah-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+      const colorPicker = document.getElementById("color-picker");
+    
+      colorPicker.addEventListener("input", function () {
+        const selectedColor = colorPicker.value;
+        document.documentElement.style.setProperty("--primary-color", selectedColor);
+      });
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!-- Include jQuery library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <!-- Include Popper.js library -->
     <script src="bootstrap/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
