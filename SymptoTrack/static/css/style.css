@@ -650,7 +650,7 @@ button:hover {
 /*Copyright*/
 .template .footer .copyright {
 	flex-shrink: 0;
-	background-color: #7b6cd5;
+	background-color: var(--primary-color);
 	color: #fff;
 	font-family: inherit;
 	font-size: 14px;
