@@ -1,8 +1,8 @@
 <!--Name of Code artifact: Symptotrack.html
-Description: This code is responsible for presenting information about the website.
+Description: This code is responsible for presenting contact information about the website.
 Authors: Freshta Z
 Date Creation : January 22, 2024
-Date Revised: January 22, 2024
+Date Revised: January 26, 2024
 Preconditions: Empty Strings are not allowed. 
 Postconditions: No return values.
 
@@ -38,7 +38,7 @@ for styling the page, as well as a link to an external font library. -->
     <link rel="icon" type="iamge/x-icon" href="../static/favicon.ico"> <!--Favicon for web page.-->
   
     <style>
-      /* Custom styles for the secondary banner */
+      /* Custom styles for the secondary banner which is used for About, services, and contact buttons */
       .secondary-banner {
         background-color: #773a5290; /* Purple background to match the primary banner */
         padding: 10px 0; /* Padding for the secondary banner */
@@ -103,7 +103,7 @@ for styling the page, as well as a link to an external font library. -->
         </div>
       </div>
      
-<!-- Secondary Banner with Buttons aligned to the left -->
+<!-- Secondary Banner with Buttons aligned to the left with three buttons: About, services and contact-->
 <div class="secondary-banner">
   <div class="button-container">
     <button type="button" onclick="location.href='About.html'">About</button>
@@ -115,11 +115,22 @@ for styling the page, as well as a link to an external font library. -->
 <br>
 
 <!-- Content Section -->
+<!-- this code is used to display the information about the website-->
+
 <div class="content-section">
   <div class="inside-container">
     <div class="row">
       <div class="col-12">
-        <p style="padding: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, ab! Consequuntur consectetur modi dolorem nesciunt. Et, ipsam provident. Vero laborum ratione totam modi eos laboriosam, facere explicabo deleniti fugit cupiditate? Hi this is the page about</p>
+        <p style="padding: 10px;">The SymptoTrack team is committed to supporting your journey to better health. For inquiries, assistance, or feedback, reach out to our dedicated team members:
+          <br><br>
+          <ul>
+            <li><b>Sarah Martinez - </b> <a href="mailto:martinezs99@ku.edu">martinezs99@ku.edu</a></li>
+            <li><b>Sree Kondi - </b> <a href="mailto:sreekondi@ku.edu">sreekondi@ku.edu</a></li>
+            <li><b>Freshta Zaheer - </b> <a href="mailto:zaheerfreshta@ku.edu">zaheerfreshta@ku.edu</a></li>
+            <li><b>Ava Greene - </b> <a href="mailto:avagreene@ku.edu">avagreene@ku.edu</a></li>
+            <li><b>Fatima Avila - </b> <a href="mailto:fatima.avila@ku.edu">fatima.avila@ku.edu</a></li>
+          </ul>
+          </p>
       </div>
     </div>
   </div>
