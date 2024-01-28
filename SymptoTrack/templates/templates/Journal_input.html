@@ -1,0 +1,177 @@
+<!--Name of Code artifact: Journal_input.html
+Description: This code is responsible for getting the user daily journal data
+Authors: Freshta Z
+Date Creation : October 28, 2023
+Date Revised: November  1, 2023
+Preconditions: Empty Strings are not allowed.
+Postconditions: No return values.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"> <!-- Set the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Define viewport settings for responsive design -->
+    <meta name="description" content="Free Template"> <!-- Meta description for SEO -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../static/css/normailze.css"> <!-- Include a custom stylesheet (normalize) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"> <!-- Include a custom stylesheet (style) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->
+    
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../static/font/web-font.css"> <!-- Include web fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
+
+    <title>SymptoTrack</title> <!-- Set the title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico"> <!-- Favicon for web page. -->
+  </head>
+  <body>
+    <div class="main-container template">
+      <!--Banner section-->
+      <div class="banner">
+        <div class="banner-overlay"></div> <!-- Overlay for the banner -->
+        <div class="inside-container top-bar">
+          <div class="row">
+            <div class="col-md-4 top-bar-left order-2 order-md-12">
+              <i class="fas fa-envelope-open-text"></i> 
+              <a href="mailto:info@webdomus.net">info.com</a> <!-- Contact email link -->
+            </div>    
+            <div class="col-md-4 logo order-1 order-md-12">
+              <a href="Homepage.html">
+                <img class="logo-img" src="../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
+              </a>
+            </div> 
+            <div class="col-md-4 top-bar-right order-3 order-md-12">
+              <i class="fas fa-phone-alt"></i> 
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Contact phone link -->
+              <p id="date"></p>
+            </div>       
+          </div>      
+        </div>
+        <div class="inside-container banner-content">
+          <div class="row">
+            <div class="col-12 content-col">
+              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
+              <!-- <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> Site title description -->
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <!-- The overall section for the journal part of the webpage -->
+<div class="container my-5">
+    <!-- Header for the journal section with centered text -->
+    <div class="header text-center">
+        <!-- The title of the journal section -->
+        <h1 class="text-dark">Daily Journal</h1>
+    </div>
+
+    <!-- Row for input fields: Date and Weather -->
+    <div class="row my-3">
+        <!-- Column for the date input -->
+        <div class="col-md-6">
+            <!-- Input field for the date -->
+            <input type="date" class="form-control" placeholder="Date :">
+        </div>
+        <!-- Column for the weather input -->
+        <div class="col-md-6">
+            <!-- Input field for the weather -->
+            <input type="text" class="form-control" placeholder="Weather">
+        </div>
+    </div>
+
+    <!-- Row for the To Do List input field -->
+    <div class="row my-3">
+        <!-- Full-width column for the To Do List input -->
+        <div class="col-12">
+            <!-- Input field for the To Do List -->
+            <input type="text" class="form-control input-text" placeholder="To Do List">
+        </div>
+    </div>
+
+    <!-- Row for the Mood input field -->
+    <div class="row my-3">
+        <!-- Column for the mood input -->
+        <div class="col-md-6">
+            <!-- Label for the mood input -->
+            Mood:
+            <!-- Input field for the mood -->
+            <input type="text" class="form-control input-text" placeholder="Mood">
+        </div>
+        
+    </div>
+
+    <!-- Row for the Grateful input field -->
+    <div class="row my-3">
+        <!-- Full-width column for the Grateful textarea -->
+        <div class="col-12">
+            <!-- Textarea for what the user is grateful for -->
+            <textarea class="form-control input-textarea" placeholder="Today, I'm Grateful for"></textarea>
+        </div>
+    </div>
+
+    <!-- Row for the Goals input field -->
+    <div class="row my-3">
+        <!-- Full-width column for the Goals input -->
+        <div class="col-12">
+            <!-- Input field for the Goals -->
+            <input type="text" class="form-control input-text" placeholder="Goals">
+        </div>
+    </div>
+
+    <!-- Row for the Notes textarea -->
+    <div class="row my-3">
+        <!-- Full-width column for the Notes textarea -->
+        <div class="col-12">
+            <!-- Textarea for additional notes -->
+            <textarea class="form-control input-textarea" placeholder="Notes"></textarea>
+        </div>
+    </div>
+
+    <!-- Row for the For Tomorrow input field -->
+    <div class="row my-3">
+        <!-- Full-width column for the For Tomorrow input -->
+        <div class="col-12">
+            <!-- Input field for plans for tomorrow -->
+            <input type="text" class="form-control input-text" placeholder="For Tomorrow">
+        </div>
+    </div>
+    <!-- Button to submit the journal form, linking to the homepage -->
+    <!-- <a href="Journal.html" class="btn btn-primary">Submit</a> -->
+    <button type="submit">Submit</button>
+</div>
+
+     
+
+      <!-- Copyright -->
+      <footer class="footer">
+        <div class="copyright">
+          <div class="inside-container">
+            <div class="row">
+              <div class="col-md-6 order-2 order-md-12">
+                <p>&copy; 2023 All Rights Reserved. Created by <a href="" class="created-by"></a></p> <!-- Copyright notice -->
+              </div>
+              <div class="col-md-6 social order-1 order-md-12">                
+                <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Social media icons -->
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>    
+    <!-- Optional JavaScript -->
+    <script src="../static/js/script.js"></script> <!-- establishes script.js connection, Sarah-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!-- Include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <!-- Include Popper.js library -->
+    <script src="bootstrap/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
+  </body>
+</html>
