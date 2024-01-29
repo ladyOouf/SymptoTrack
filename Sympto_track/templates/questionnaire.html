@@ -1,0 +1,232 @@
+<!--Name of Code artifact: questionnaire.html
+Description: This code asks the user questions about their symptom.
+Authors: Ava G
+Date Creation : November 17, 2023
+Date Revised: December 3, 2023
+Preconditions: Empty Strings are not allowed.
+Postconditions: No return values.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"> <!-- Set the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Define viewport settings for responsive design -->
+    <meta name="description" content="Free Template"> <!-- Meta description for SEO -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../static/css/normailze.css"> <!-- Include a custom stylesheet (normalize) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"> <!-- Include a custom stylesheet (style) -->
+    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->
+    
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../static/font/web-font.css"> <!-- Include web fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
+
+    <title>SymptoTrack</title> <!-- Set the title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico"> <!-- Favicon for web page. -->
+  </head>
+  <body>
+    <div class="main-container template">
+      <!--Banner section-->
+      <div class="banner">
+        <div class="banner-overlay"></div> <!-- Overlay for the banner -->
+        <div class="inside-container top-bar">
+          <div class="row">
+            <div class="col-md-4 top-bar-left order-2 order-md-12">
+              <i class="fas fa-envelope-open-text"></i> 
+              <a href="mailto:info@webdomus.net">info.com</a> <!-- Contact email link -->
+            </div>    
+            <div class="col-md-4 logo order-1 order-md-12">
+              <a href="/homepage/">
+                <img class="logo-img" src="../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
+              </a>
+            </div> 
+            <div class="col-md-4 top-bar-right order-3 order-md-12">
+              <i class="fas fa-phone-alt"></i> 
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Contact phone link -->
+            </div>       
+          </div>      
+        </div>
+        <div class="inside-container banner-content">
+          <div class="row">
+            <div class="col-12 content-col">
+              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
+            </div>
+          </div>
+        </div>
+      </div>
+     
+<!-- display -->
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            padding-top: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+        }
+
+        .form-check-label {
+            margin-left: 5px;
+        }
+
+        .form-control, .form-check-input {
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section-header {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .checkbox-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 10px; /* Spacing between grid items */
+}
+
+.form-check {
+    display: flex; /* Use flexbox to align checkbox and label */
+    align-items: center; /* Align the checkbox and label vertically */
+}
+
+.button-container {
+    display: flex;       /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically (if the container has a specific height) */
+    height: 100px;           /* Example height, you can adjust this as needed */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+      <!-- page heading -->
+      <h2 class="section-title">Questionnaire</h2>
+        <!-- page subheading -->
+        <p class="text-center">Please answer the questions to the best of your ability. Your answers will be stored securely.</p>
+        
+        <form>
+          <!-- section for pain duration -->
+            <div class="form-section">
+                <h4 class="form-section-header">Pain Duration</h4>
+                <input type="number" class="form-control" id="walkPainFree" name="walkPainFree" min="0" placeholder="How many minutes can you walk without pain?">
+                <input type="number" class="form-control" id="standPainFree" name="standPainFree" min="0" placeholder="How many minutes can you stand without pain?">
+                <input type="number" class="form-control" id="sitPainFree" name="sitPainFree" min="0" placeholder="How many minutes can you sit without pain?">
+            </div>
+            
+            <!-- section for pain areas -->
+            <div class="form-section">
+                <h4 class="form-section-header">Pain Areas</h4>
+                <div class="checkbox-grid">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="back" name="painAreas" value="back">
+                    <label class="form-check-label" for="back">Back</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="shoulders" name="painAreas" value="shoulders">
+                    <label class="form-check-label" for="shoulders">Shoulders</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="knees" name="painAreas" value="knees">
+                    <label class="form-check-label" for="knees">Knees</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="neck" name="painAreas" value="neck">
+                    <label class="form-check-label" for="neck">Neck</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="otherCheckbox" name="painAreas" value="other">
+                    <label class="form-check-label" for="otherCheckbox">Other</label>
+                    <input type="text" class="form-control" id="otherText" name="otherText" placeholder="Please specify" style="display: none;">
+                </div>
+               </div>
+            </div>
+            <!-- section for pain description -->
+            <div class="form-section">
+                <h4 class="form-section-header">Pain Description</h4>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sleepDisturbance" name="sleepDisturbance">
+                    <label class="form-check-label" for="sleepDisturbance">Has the pain kept you from sleeping?</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="aching" name="painType" value="aching">
+                    <label class="form-check-label" for="aching">Aching</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sharp" name="painType" value="sharp">
+                    <label class="form-check-label" for="sharp">Sharp</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="dull" name="painType" value="dull">
+                    <label class="form-check-label" for="dull">Dull</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="shooting" name="painType" value="shooting">
+                    <label class="form-check-label" for="shooting">Shooting</label>
+                </div>
+            </div>
+            <!-- section for pain frequency and location -->
+            <div class="form-section">
+                <h4 class="form-section-header">Pain Frequency and Location</h4>
+                <select class="form-control" id="painFrequency" name="painFrequency">
+                    <option value="constant">Constant</option>
+                    <option value="occasional">Occasional</option>
+                </select>
+                <select class="form-control" id="painLocation" name="painLocation">
+                    <option value="stationary">Stays in one place</option>
+                    <option value="radiate">Radiates</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <button type="submit">Submit</button>
+            </div>
+                
+        </form>
+    </div>
+<!-- creates a text box when other is clicked -->
+    <script src="../static/js/jquery.js"></script> <!-- new query, Sarah -->
+    <script src="../static/js/scripts.js"></script> <!-- establishes script.js connection, Sarah -->
+    <script>
+        function toggleOtherTextbox() {
+            var checkbox = document.getElementById("otherCheckbox");
+            var text = document.getElementById("otherText");
+            text.style.display = checkbox.checked ? "block" : "none";
+        }
+        document.getElementById("otherCheckbox").addEventListener('change', toggleOtherTextbox);
+    </script>
+
+</body>
+</html>
