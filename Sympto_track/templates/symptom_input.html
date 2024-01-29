@@ -2,7 +2,7 @@
 Description: This code is responsible for getting the user's pain input.
 Authors: Ava G, Sree Kondi
 Date Creation : October 15, 2023
-Date Revised: November 17, 2023
+Date Revised: January 24, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values. -->
 
@@ -42,7 +42,7 @@ Postconditions: No return values. -->
               <a href="mailto:info@webdomus.net">info.com</a> <!-- Contact email link -->
             </div>    
             <div class="col-md-4 logo order-1 order-md-12">
-              <a href="/homepage/">
+              <a href="Homepage.html">
                 <img class="logo-img" src="../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
               </a>
             </div> 
@@ -70,12 +70,17 @@ Postconditions: No return values. -->
       <style>
         form {
             text-align: center;
-            font-size: 25px; /* You can adjust the font size as needed */
+            font-size: 30px; /* You can adjust the font size as needed */
         }
+        .btn-primary {
+          background-color: purple;
+          color: white;
+        }
+
       </style>
       <!--Page Heading-->
       <br>
-      <p style="text-align:center; font-size: 30px; font-family: Roboto Slab;">Symptom Input</p>
+      <p style="text-align:center; font-size: 30px; font-family: Apple Chancery;">Symptom Input</p>
       <br>
       <br>
       <br>
@@ -91,7 +96,7 @@ Postconditions: No return values. -->
       <!--Creating the slider-->
 
         <form>
-            <label for="slider" style = "font-family : Helvetica Neue;">Rank your pain from one to ten:</label>
+            <label for="slider" style = "font-family : Apple Chancery;">Rank your pain from one to ten:</label>
             <input type="range" id="slider" name="slider" min="0" max="10" step="1" value="0">
             <output for="slider" id="sliderValue">0</output>
         </form><br>
@@ -180,7 +185,7 @@ Postconditions: No return values. -->
 
 
       </script>
-      <div class="container my-5"><a href="/homepage/" class="btn btn-primary">Submit</a></div>
+      <div class="container my-5"><a href="Homepage.html" class="btn btn-primary">Submit</a></div>
     
       </body>
       </html>
@@ -207,12 +212,11 @@ Postconditions: No return values. -->
       </footer>
     </div>    
     <!-- Optional JavaScript -->
-    <script src="../static/js/jquery.js"></script> <!-- new jquery 12.3, Sarah -->
-    <script src="../static/js/scripts.js"></script> <!-- establishes script.js connection, Sarah -->
-<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
-<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
-    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/script.js"></script> <!-- establishes script.js connection, Sarah -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <!-- Include jQuery library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <!-- Include Popper.js library -->
+    <script src="bootstrap/js/bootstrap.min.js"></script> <!-- Include Bootstrap JavaScript -->
   </body>
 </html>
 
