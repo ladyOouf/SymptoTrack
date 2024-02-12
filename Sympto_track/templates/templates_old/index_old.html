@@ -1,0 +1,136 @@
+<!--Name of Code artifact: Symptotrack.html
+Description: This code is responsible for getting the user name and password.
+Authors: Freshta Z, Sree K, Ava G, Sarah M
+Date Creation : September 20, 2023
+Date Revised: December 03, 2023
+Preconditions: Empty Strings are not allowed. Email and password required. Flask must be running for sign up page
+and homepage to be accessed. Will return error if not running
+Postconditions: No return values.
+Any known faults: index will not lead to homepage anymore unless the flask project is running. Jqueries are failing to send responses
+
+
+
+
+-->
+<!-- This code is the HTML code for the head section of a web page. It includes meta tags for
+character encoding, viewport settings, and description. It also includes links to external CSS files
+for styling the page, as well as a link to an external font library. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free Template">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap-grid.css">
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../../static/css/normailze.css">
+    
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/responsive.css">
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../../static/font/web-font.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+
+    <title>SymptoTrack</title> <!--Title of the web page.-->
+    <link rel="icon" type="iamge/x-icon" href="../../static/favicon.ico"> <!--Favicon for web page.-->
+  </head>
+  <body>
+    <!-- The code is creating a banner section for the web page. It includes a top bar with
+    contact information (email and phone number), a logo, and a banner content section with a title and
+    description. The banner section is contained within a `<div>` element with a class of "banner". -->
+    <div class="main-container template">
+      <!--Banner section-->
+      <div class="banner">
+        <div class="banner-overlay"></div>
+        <div class="inside-container top-bar">
+          <div class="row">
+            <div class="col-md-4 top-bar-left order-2 order-md-12">
+              <i class="fas fa-envelope-open-text"></i> 
+              <a href="mailto:info@webdomus.net">info.com</a>
+            </div>    
+            <div class="col-md-4 logo order-1 order-md-12">
+              <a href="Homepage.html">
+                <img class="logo-img" src="../../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
+              </a>
+            </div> 
+            <div class="col-md-4 top-bar-right order-3 order-md-12">
+              <i class="fas fa-phone-alt"></i> 
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a>
+            </div>       
+          </div>      
+        </div>
+        <div class="inside-container banner-content">
+          <div class="row">
+            <div class="col-12 content-col">
+              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1>
+              <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      
+    
+ <!-- This code  includes a form with two input
+ fields for email and password, along with corresponding labels. It also includes two buttons, one
+ for login and one for sign in. Additionally, there is a link for forgot password. -->
+    <!-- Form section -->
+    <div class="inside-container form-section">
+      <div class="row">
+        <div class="col-md-6">
+          <form id="loginForm" action="/login"> <!-- Sarah added this and changed forms to required -->
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button id="loginBtn" class="btn btn-primary">Login</button> <!-- Button for Login, changed by Sarah -->
+            <a href="/signup/" class="btn btn-secondary">Sign Up</a>   <!-- Button for Sign in, changed by Sarah -->
+            <div class="form-group">
+              <a href="#" class="forgot-password">Forgot Password?</a> 
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+      <!--Copyright-->
+    <!-- This code is creating a footer section for the web page. It includes a copyright
+    statement, the name of the creator (SymptoTrack), and social media icons for Facebook, Twitter,
+    Google Plus, and LinkedIn. The footer is contained within a `<footer>` element and has a class of
+    "footer". -->
+      <footer class="footer">
+        <div class="copyright">
+          <div class="inside-container">
+            <div class="row">
+              <div class="col-md-6 order-2 order-md-12">
+                <p>&copy; 2023 All Rights Reserved. Created by SymptoTrack <a href="" class="created-by"></a></p>
+              </div>
+              <div class="col-md-6 social order-1 order-md-12">                
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>    
+    <!-- Optional JavaScript -->
+    <script src="../../static/js/jquery.js"></script> <!-- new jquery 12.3, Sarah -->
+    <script src="../../static/js/scripts.js"></script> <!-- establishes script.js connection, Sarah -->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

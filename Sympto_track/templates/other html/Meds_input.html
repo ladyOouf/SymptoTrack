@@ -1,0 +1,155 @@
+<!--Name of Code artifact: Meds.html
+Description: This code is responsible for getting the user medication data.
+Authors: Freshta Z, Fatima A
+Date Creation : October 18, 2023
+Date Revised: October  19, 2023
+Preconditions: Empty Strings are not allowed.
+Postconditions: No return values.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"> <!-- Set the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Define viewport settings for responsive design -->
+    <meta name="description" content="Free Template"> <!-- Meta description for SEO -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../../static/css/normailze.css"> <!-- Include a custom stylesheet (normalize) -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css"> <!-- Include a custom stylesheet (style) -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->
+    
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../../static/font/web-font.css"> <!-- Include web fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
+
+    <style>
+      body {
+        background-color: #f7f7f7;
+      }
+    </style>
+
+    <title>SymptoTrack</title> <!-- Set the title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="../../static/favicon.ico"> <!-- Favicon for web page. -->
+  </head>
+  <body>
+    <div class="main-container template">
+      <!--Banner section-->
+      <div class="banner">
+        <div class="banner-overlay"></div> <!-- Overlay for the banner -->
+        <div class="inside-container top-bar">
+          <div class="row">
+            <div class="col-md-4 top-bar-left order-2 order-md-12">
+              <i class="fas fa-envelope-open-text"></i> 
+              <a href="mailto:info@webdomus.net">info.com</a> <!-- Contact email link -->
+            </div>    
+            <div class="col-md-4 logo order-1 order-md-12">
+              <a href="/homepage/">
+                <img class="logo-img" src="../../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
+              </a>
+            </div> 
+            <div class="col-md-4 top-bar-right order-3 order-md-12">
+              <i class="fas fa-phone-alt"></i> 
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Contact phone link -->
+            </div>       
+          </div>      
+        </div>
+        <div class="inside-container banner-content">
+          <div class="row">
+            <div class="col-12 content-col">
+              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
+              <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> <!-- Site title description -->
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="page-content">
+        <!-- Form section -->
+        <div class="inside-container form-section">
+          <div class="row sections-detail">
+            <div class="col-12">
+              <h2 class="section-title">New Medication</h2>
+            </div>
+          </div>
+          <form>
+            <div class="form-group">
+              <label for="BrandName">Brand Name</label> <!-- Label for Brand name input -->
+              <input type="text" id="BrandName" name="BrandName" placeholder="The commercial name given by the manufacturer" required> <!-- brand name input field -->
+            </div>
+            <div class="form-group">
+              <label for="GenericName">Generic Name</label> <!-- Label for Generic Name input -->
+              <input type="text" id="GenericName" name="GenericName" placeholder=" The standard name of the medicine"> <!-- Generic Name input field -->
+            </div>
+            <div class="form-group">
+              <label for="Strength">Strength</label> <!-- Label for the strength field -->
+                <input type="text" id="Strength" name="Strength" placeholder="Add dosage of medication"> <!--  dosage input field -->
+            </div> 
+            <div class="form-group">
+              <label for="MedicationForm">Medication Form</label> <!-- Label for form of the medication field -->
+              <select id="MedicationForm" name="MedicationForm">
+                <!-- Option elements for each category -->
+                <option value="Tablet">Tablet</option>
+                <option value="Capsule">Capsule</option>
+                <option value="Liquid solution">Liquid solution (syrups, drops)</option>
+                <option value="Suspension">Suspension</option>
+                <option value="Injection">Injection/Injectable solution</option>
+                <option value="Infusion">Infusion (for intravenous delivery)</option>
+                <option value="Topical forms">Topical forms (creams, gels, ointments, patches)</option>
+                <option value="Inhalers">Inhalers (aerosol sprays, dry powder)</option>
+                <option value="Suppositories">Suppositories</option>
+                <option value="Powders">Powders</option>
+                <option value="Lozenges">Lozenges</option>
+                <option value="Films">Films (dissolvable)</option>
+                <option value="Implants">Implants</option>
+                <option value="Sprays">Sprays (nasal, oral)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="DosingSchedule">Dosing Schedule</label> <!-- Label for dosing schedule input -->
+              <input type="text" id="DosingSchedule" name="DosingSchedule" placeholder="Dosing Schedule"> <!-- Dosing Schedule input field -->
+            </div>    
+            <div class="form-group">
+              <label for="Comment"> Instructions</label> <!-- Label for Comment  input -->
+              <input type="text" id="Instruction" name="Instruction" rows="3" placeholder="Additional Instruction"> <!--  Comment input field -->
+            </div>
+            <!-- Submit Button -->
+            <a href="/meds_list/">
+              <button type="submit">Submit</button>
+            </a>
+          </form>
+        </div>
+      </div>
+     
+      <!--Copyright-->
+      <footer class="footer">
+        <div class="copyright">
+          <div class="inside-container">
+            <div class="row">
+              <div class="col-md-6 order-2 order-md-12">
+                <p>&copy; 2023 All Rights Reserved. Created by SymptoTrack<a href="" class="created-by"></a></p> <!-- Copyright notice -->
+              </div>
+              <div class="col-md-6 social order-1 order-md-12">                
+                <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Social media icons -->
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>    
+    <!-- Optional JavaScript -->
+    <script src="../../static/js/jquery.js"></script> <!-- new jquery 12.3, Sarah -->
+    <script src="../../static/js/scripts.js"></script> <!-- establishes script.js connection, Sarah -->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

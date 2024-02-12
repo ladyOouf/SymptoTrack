@@ -1,0 +1,184 @@
+<!--Name of Code artifact: Meds.html
+Description: This code is responsible for displaying user medication data.
+Authors: Freshta Z, Fatima A
+Date Creation : October 19, 2023
+Date Revised: October 22, 2023
+Preconditions: Empty Strings are not allowed.
+Postconditions: No return values.
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"> <!-- Set the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Define viewport settings for responsive design -->
+    <meta name="description" content="Free Template"> <!-- Meta description for SEO -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../../static/css/normailze.css"> <!-- Include a custom stylesheet (normalize) -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css"> <!-- Include a custom stylesheet (style) -->
+    <link rel="stylesheet" type="text/css" href="../../static/css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->
+    
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../../static/font/web-font.css"> <!-- Include web fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
+
+    <title>SymptoTrack</title> <!-- Set the title of the webpage -->
+    <link rel="icon" type="image/x-icon" href="../../static/favicon.ico"> <!-- Favicon for web page. -->
+  </head>
+  <body>
+    <div class="main-container template">
+      <!--Banner section-->
+      <div class="banner">
+        <div class="banner-overlay"></div> <!-- Overlay for the banner -->
+        <div class="inside-container top-bar">
+          <div class="row">
+            <div class="col-md-4 top-bar-left order-2 order-md-12">
+              <i class="fas fa-envelope-open-text"></i> 
+              <a href="mailto:info@webdomus.net">info.com</a> <!-- Contact email link -->
+            </div>    
+            <div class="col-md-4 logo order-1 order-md-12">
+              <a href="/homepage/">
+                <img class="logo-img" src="../../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
+              </a>
+            </div> 
+            <div class="col-md-4 top-bar-right order-3 order-md-12">
+              <i class="fas fa-phone-alt"></i> 
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Contact phone link -->
+              <p id="date"></p>
+            </div>       
+          </div>      
+        </div>
+        <div class="inside-container banner-content">
+          <div class="row">
+            <div class="col-12 content-col">
+              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
+              <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> <!-- Site title description -->
+            </div>
+             <!-- JavaScript Code for displaying current date-->
+            <script>
+              var n = new Date(); 
+              var y = n.getFullYear(); //getting year
+              var m = n.getMonth() + 1; //month
+              var d = n.getDate(); //date
+              document.getElementById("date").innerHTML = m + "/" + d + "/" + y;  //putting all together for the formatting
+            </script>
+          </div>
+        </div>
+      </div>
+    
+      <div class="page-content">
+        <!--Buttons-->
+        <!-- This section of the web page is dedicated to "Buttons" and features a grid layout with four columns, each representing a button. It begins with a title ("Buttons") and a section description. Inside the section, a grid layout is established using Bootstrap's "col-lg-3" class for each column. Each column contains a placeholder image, a link, a title ("Button"), and a description ("Button"). However, the specific content, functionality, and images for these buttons are not provided in the code and should be customized separately. This code serves as a template for creating and displaying button elements on the web page. -->
+        <div class="trainer-section medsList">
+          <div class="row sections-detail">
+            <div class="col-12">
+              <h2 class="section-title">Medications</h2>
+            </div>
+          </div>
+          <div class="inside-container">
+            <div class="row trainer-col">
+              <div class="col-12">
+                <h3 class="section-subheading">Currently Taking</h3>
+              </div>
+              <div class="meds-container">
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="../../static/img/med-1.png" class="trainer-in-img" alt="">
+                  </div>              
+                  <a href="#"><h3 class="trainer-title">Med 1</h3></a>
+                  <p class="trainer-desc">10 mg </p>
+                </div>
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="../../static/img/med-2.png" class="trainer-in-img" alt="">
+                  </div>
+                  <a href="#"><h3 class="trainer-title">Med 2</h3></a>
+                  <p class="trainer-desc">15 mg</p>
+                </div>
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="../../static/img/med-3.png" class="trainer-in-img" alt="">
+                  </div>
+                  <a href="#"><h3 class="trainer-title">Med 3</h3></a>
+                  <p class="trainer-desc">20 mg</p>
+                </div>
+                <!-- Add medication button -->
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="../../static/img/plus_icon.png" class="trainer-in-img" alt="">
+                  </div>
+                  <a href="/meds_input/"><h3 class="trainer-title">Add Medication</h3></a>
+                  <p class="trainer-desc"></p>
+                </div>
+              </div>
+              <div class="col-12">
+                <h3 class="section-subheading">Past Medications</h3>
+              </div>
+              <div class="meds-container">
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="../../static/img/med-5.png" class="trainer-in-img" alt="">
+                  </div>
+                  <a href="#"><h3 class="trainer-title">Med 5</h3></a>
+                  <p class="trainer-desc">Last Taken: [Date]</p>
+                </div>
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="../../static/img/med-6.png" class="trainer-in-img" alt="">
+                  </div>
+                  <a href="#"><h3 class="trainer-title">Med 6</h3></a>
+                  <p class="trainer-desc">Last Taken: [Date]</p>
+                </div>
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="" class="trainer-in-img" alt="">
+                  </div>
+                  <a href="#"><h3 class="trainer-title"></h3></a>
+                  <p class="trainer-desc"></p>
+                </div>
+                <div class="col-lg-3">
+                  <div class="trainer-img">
+                    <img src="" class="trainer-in-img" alt="">
+                  </div>
+                  <a href="#"><h3 class="trainer-title"></h3></a>
+                  <p class="trainer-desc"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!--Copyright-->
+      <footer class="footer">
+        <div class="copyright">
+          <div class="inside-container">
+            <div class="row">
+              <div class="col-md-6 order-2 order-md-12">
+                <p>&copy; 2023 All Rights Reserved. Created by SymptoTrack<a href="" class="created-by"></a></p> <!-- Copyright notice -->
+              </div>
+              <div class="col-md-6 social order-1 order-md-12">                
+                <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Social media icons -->
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <script src="../../static/js/jquery.js"></script> <!-- new jquery 12.3, Sarah -->
+    <script src="../../static/js/scripts.js"></script> <!-- establishes script.js connection, Sarah -->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
