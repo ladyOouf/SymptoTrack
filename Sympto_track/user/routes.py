@@ -3,7 +3,7 @@
 # • Description: Establishes signal to MongoDb Cluster and Sample Collections and between the frontend html pages.
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 01.28.2024
+# • Latest Revision: 02.11.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster.
@@ -17,7 +17,7 @@
 
 from flask import render_template, redirect, url_for, request, jsonify, Flask, session
 from app import app, db
-from user.models import User
+from user.models import User, PainLog
 from app import login_required
 
 
@@ -34,6 +34,12 @@ def signout():
 @app.route('/user/login', methods=['POST'])
 def login():
     return User().login()
+
+
+@app.route('/user/log_pain', methods=['POST'])
+def log_pain():
+    print("Received POST request to log pain")  # Add this line to check
+    return PainLog().log_pain()
 
 
 @app.route('/log/')
