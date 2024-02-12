@@ -3,13 +3,13 @@
 # • Description: Establishes signal to MongoDb Cluster and Sample Collections and between the frontend html pages.
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 01.28.2024
+# • Latest Revision: 02.11.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster
 #   Query setup: { field: 'value' }
 # • Postconditions: None
-# • Errors:
+# • Errors: currently in process of data visual sprint
 # • Side effects: None
 # • Invariants: None
 # • Any known faults: the entire folder doesn't seem to work in the actual repo, but it works separately.
@@ -32,6 +32,7 @@ app.secret_key = b'\xcc^\x91\xea\x17-\xd0W\x03\xa7\xf8J0\xac8\xc5'
 client = MongoClient(MONGODB_URI)
 db = client['symptotrack']
 users = db['user_creds']
+symptoms = db['pain']
 
 
 def login_required(f):
@@ -47,7 +48,7 @@ def login_required(f):
 
 
 # routes
-# from user import routes
+from user import routes
 
 
 @app.route('/')
@@ -57,10 +58,17 @@ def home():
 
 @app.route('/signup/')
 def register():
-    return render_template('Sign up.html')
+    return render_template('other html/Sign up.html')
 
 
 @app.route('/homepage/')
 @login_required
-def perfil():
-    return render_template('Homepage.html')
+def homepage():
+    return render_template('Homepage_new.html')
+
+
+@app.route('/symptom_input/')
+@login_required
+def symptom_input():
+    return render_template('other html/symptom_input.html')
+
