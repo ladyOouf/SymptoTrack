@@ -42,76 +42,71 @@ def log_pain():
     return PainLog().log_pain()
 
 
+# @app.route('/symptom_input/')
+# @login_required
+# def symptom_input():
+#     return render_template('other html/symptom_input.html')
+
+
 @app.route('/log/')
 @login_required
 def log():
-    return render_template('log_options.html')
+    return render_template('other html/log_options.html')
 
 
 @app.route('/questionnaire/')
 @login_required
 def questionnaire():
-    return render_template('questionnaire.html')
+    return render_template('other html/questionnaire.html')
 
 
 @app.route('/about/')
 def about():
-    return render_template('about.html')
-
-
-@app.route('/meds_info/')
-@login_required
-def meds_info():
-    return render_template('Med_info.html')
-
-
-@app.route('/meds_input/')
-@login_required
-def meds_input():
-    return render_template('Meds_input.html')
+    return render_template('other html/about.html')
 
 
 @app.route('/meds_list/')
 @login_required
 def meds_list():
-    return render_template('MedsList.html')
+    return render_template('other html/MedsList.html')
 
 
-@app.route('/more_info/')
+@app.route('/meds_input/')
 @login_required
-def more_info():
-    return render_template('More info.html')
+def meds_input():
+    return render_template('other html/Meds_input.html')
 
 
-@app.route('/services/')
-def services():
-    return render_template('Services.html')
+@app.route('/meds_info/')
+@login_required
+def meds_info():
+    return render_template('other html/Med_info.html')
 
 
 @app.route('/journal/')
 @login_required
 def journal():
-    return render_template('Journal.html')
+    return render_template('other html/Journal.html')
 
 
 @app.route('/journal_input/')
 @login_required
 def journal_input():
-    return render_template('Journal_input.html')
+    return render_template('other html/Journal_input.html')
 
 
 @app.route('/journal_output/')
 @login_required
 def journal_output():
-    return render_template('Journal_output.html')
+    return render_template('other html/Journal_output.html')
+
 
 
 @app.route('/contact/')
 def contact():
-    return render_template('Contact.html')
+    return render_template('other html/Contact.html')
 
 
-@app.route('/symptom_input/')
-@login_required
-def symptom_input():
-    return render_template('symptom_input.html')
+@app.route('/services/')
+def services():
+    return render_template('other html/Services.html')
