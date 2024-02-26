@@ -3,7 +3,7 @@
 # • Description: creates the user session
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 02.11.2024
+# • Latest Revision: 02.25.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster
@@ -80,7 +80,7 @@ class PainLog:
         pain_log_entry = {
             "user_id": user_id,
             "pain_input": pain_input,
-            "pain_date": pain_date,
+            "pain_date": str(pain_date),
             "pain_description": pain_description
         }
 
