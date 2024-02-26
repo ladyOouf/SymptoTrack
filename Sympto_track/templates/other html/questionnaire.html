@@ -57,6 +57,13 @@ Postconditions: No return values.
             <div class="col-12 content-col">
               <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
             </div>
+            <script>
+                var n = new Date(); 
+                var y = n.getFullYear(); //getting year
+                var m = n.getMonth() + 1; //month
+                var d = n.getDate(); //date
+                document.getElementById("date").innerHTML = m + "/" + d + "/" + y;  //putting all together for the formatting
+              </script>
           </div>
         </div>
       </div>
