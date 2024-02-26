@@ -42,21 +42,25 @@ $("form[name=login_form]").submit(function (e) {
 });
 
 $("form[name=symptom_input]").submit(function (e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     var $form = $(this);
     var $error = $form.find(".error");
-    var data = $form.serialize(); 
+    var data = $form.serialize();
+
+    // Format the pain_date field
+    var painDate = new Date($form.find("[name=pain_date]").val());
+    data += `&pain_date=${painDate.toISOString().split('T')[0]}`;
 
     $.ajax({
         url: "/user/log_pain",
         type: "POST",
         data: data,
-        dataType: "json",
+        contentType: false,
+        processData: false,
         success: function (resp) {
             console.log("Pain data logged successfully");
             window.location.href = "/homepage/";
-
         },
         error: function (resp) {
             console.error("Error logging pain data:", resp);
