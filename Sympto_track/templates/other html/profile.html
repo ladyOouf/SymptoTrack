@@ -2,7 +2,7 @@
 Description: This code displays the user's profile information.
 Authors: Ava G, Sarah M
 Date Creation : March 2, 2023
-Date Revised: March 2, 2023
+Date Revised: March 10, 2023
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -77,11 +77,11 @@ Postconditions: No return values.
                     <div class="form-section">
                         <div class="form-group">
                             <label for="userName">Name:</label>
-                            <p id="userName" class="section-subheading">Someone's Name</p> <!-- Replace with dynamic data -->
+                            <p id="userName" class="section-subheading">{{ session['user']['firstName'] }}</p>
                         </div>
                         <div class="form-group">
                             <label for="userEmail">Email:</label>
-                            <p id="userEmail" class="section-subheading">name@email.com</p> <!-- Replace with dynamic data -->
+                            <p id="userEmail" class="section-subheading">{{ session['user']['email'] }}</p>
                         </div>
                     </div>
                 </div>
