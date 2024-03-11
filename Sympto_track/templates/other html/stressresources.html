@@ -1,0 +1,169 @@
+<!--Name of Code artifact: Symptotrack.html
+Description: This code is responsible for presenting contact information about the website.
+Authors: Sree Kondi
+Date Creation : March 6, 2024
+Date Revised: March 10, 2024
+Preconditions: Empty Strings are not allowed. 
+Postconditions: No return values.
+
+
+
+
+-->
+<!-- This code is the HTML code for the head section of a web page. It includes meta tags for
+character encoding, viewport settings, and description. It also includes links to external CSS files
+for styling the page, as well as a link to an external font library. -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Free Template">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../static/bootstrap/css/bootstrap-grid.css">
+
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="../../static/css/normalize.css">
+    
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/responsive.css">
+    <!--Font-->
+    <link rel="stylesheet" type="text/css" href="../../static/font/web-font.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+
+    <title>SymptoTrack</title> <!--Title of the web page.-->
+    <link rel="icon" type="iamge/x-icon" href="../../static/favicon.ico"> <!--Favicon for web page.-->
+  
+    <style>
+      /* Custom styles for the secondary banner which is used for About, services, and contact buttons */
+      .secondary-banner {
+        background-color: #773a5290; /* Purple background to match the primary banner */
+        padding: 10px 0; /* Padding for the secondary banner */
+      }
+
+      .secondary-banner .button-container {
+        padding-left: 20px; /* Padding from the left side of the screen */
+      }
+
+      .secondary-banner button {
+        background: none; /* Transparent background for buttons */
+        border: none; /* Remove button borders */
+        color: white; /* White text color */
+        padding: 10px 20px; /* Padding inside buttons */
+        font-size: 1em; /* Font size for buttons */
+        cursor: pointer; /* Cursor as pointer */
+        transition: background-color 0.3s; /* Transition for hover effects */
+        display: inline-block; /* Display buttons inline */
+      }
+
+      .secondary-banner button:not(:last-child) {
+        border-right: 1px solid #ffffff; /* White line separator for buttons except last one */
+      }
+
+      .secondary-banner button:hover {
+        background-color: #7e57c2; /* Lighter purple background on hover */
+      }
+    </style>
+          </head>
+  <body>
+    <!-- The code is creating a banner section for the web page. It includes a top bar with
+    contact information (email and phone number), a logo, and a banner content section with a title and
+    description. The banner section is contained within a `<div>` element with a class of "banner". -->
+    <div class="main-container template">
+      <!--Banner section-->
+      <div class="banner">
+        <div class="banner-overlay"></div>
+        <div class="inside-container top-bar">
+          <div class="row">
+            <div class="col-md-4 top-bar-left order-2 order-md-12">
+              <i class="fas fa-envelope-open-text"></i> 
+              <a href="mailto:info@webdomus.net">info.com</a>
+            </div>    
+            <div class="col-md-4 logo order-1 order-md-12">
+              <a href="/homepage/">
+                <img class="logo-img" src="../../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
+              </a>
+            </div> 
+            <div class="col-md-4 top-bar-right order-3 order-md-12">
+              <i class="fas fa-phone-alt"></i> 
+              <a href="tel:+39.0874.484661">+1 (785)979-7294</a>
+            </div>       
+          </div>      
+        </div>
+        <div class="inside-container banner-content">
+          <div class="row">
+            <div class="col-12 content-col">
+              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+<!-- Secondary Banner with Buttons aligned to the left with three buttons: About, services and contact-->
+<div class="secondary-banner">
+  <div class="button-container">
+    <button type="button" onclick="location.href='/about/'">About</button>
+    <button type="button" onclick="location.href='/services/'">Services</button>
+    <button type="button" onclick="location.href='/contact/'">Contact</button>
+  </div>
+</div>
+<br>
+<br>
+
+<!-- Content Section -->
+<!-- this code is used to display the information about the website-->
+
+<div class="content-section">
+  <div class="inside-container">
+    <div class="row">
+      <div class="col-12">
+        <p style="padding: 10px;">The SymptoTrack team is committed to supporting your journey to better health. For inquiries, assistance, or feedback, reach out to our dedicated team members:
+          <br><br>
+          <ul>
+            <li><b>Mental Health Helpline- </b> <a href="https://www.thetrevorproject.org/get-help/?gad_source=1&gclid=CjwKCAiA_aGuBhACEiwAly57MW_9cWFdH7eD0oX6WMkMVrbPCZrIVA0e1blcMiRhRV60EgxV63cu5BoCESoQAvD_BwE">Click here!</a></li>
+            <li><b>National Helpline - </b> <a href="https://www.samhsa.gov/find-help/national-helpline">Click here to reach helpline!</a></li>
+            <li><b>Mental Health Yoga - </b> <a href="https://healthymummywellness.com/the-best-yoga-poses-for-mental-health/">Click here for Yoga tips!</a></li>
+            <li><b>Meditations - </b> <a href="https://www.tarabrach.com/guided-meditations/"> Click here for Guided Meditations</a></li>
+          </ul>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+      <!--Copyright-->
+    <!-- This code is creating a footer section for the web page. It includes a copyright
+    statement, the name of the creator (SymptoTrack), and social media icons for Facebook, Twitter,
+    Google Plus, and LinkedIn. The footer is contained within a `<footer>` element and has a class of
+    "footer". -->
+      <footer class="footer">
+        <div class="copyright">
+          <div class="inside-container">
+            <div class="row">
+              <div class="col-md-6 order-2 order-md-12">
+                <p>&copy; 2023 All Rights Reserved. Created by SymptoTrack <a href="" class="created-by"></a></p>
+              </div>
+              <div class="col-md-6 social order-1 order-md-12">                
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>    
+    <!-- Optional JavaScript -->
+    <script src="../../static/js/jquery.js"></script> <!-- new jquery 12.3, Sarah -->
+    <script src="../../static/js/scripts.js"></script> <!-- establishes script.js connection, Sarah -->
+<!--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>-->
+    <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
