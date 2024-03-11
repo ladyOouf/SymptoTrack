@@ -2,110 +2,15 @@
 Description: This code is This page is responsible for providing easy access to our services through intuitive buttons and a user-friendly interface, ensuring a seamless experience for our visitors.
 Authors: Freshta Z, Ava G, Sree K, Sarah M
 Date Creation : October 2, 2023
-Date Revised: February 25, 2024
+Date Revised: March 10, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8"> <!-- Set the character encoding to UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Define viewport settings for responsive design -->
-    <meta name="description" content="Free Template"> <!-- Meta description for SEO -->
+{% extends "base.html" %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css"> <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap-grid.css"> <!-- Include Bootstrap Grid CSS -->
 
-    <!--Stylesheet-->
-    <link rel="stylesheet" type="text/css" href="../static/css/normalize.css"> <!-- Include a custom stylesheet (normalize) -->
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css"> <!-- Include a custom stylesheet (style) -->
-    <link rel="stylesheet" type="text/css" href="../static/css/responsive.css"> <!-- Include a custom stylesheet (responsive) -->
-    
-    <!--Font-->
-    <link rel="stylesheet" type="text/css" href="../static/font/web-font.css"> <!-- Include web fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet"> <!-- Include Font Awesome icons -->
-
-    <title>SymptoTrack</title> <!-- Set the title of the webpage -->
-    <!-- Set the primary color -->
-    <style>
-      :root {
-        --primary-color: #69218a; /* Default primary color */
-      }
-    </style>
-
-    <link rel="icon" type="image/x-icon" href="../static/favicon.ico"> <!-- Favicon for web page. -->
-  </head>
-
-  <body>
-    <div class="main-container template">
-      <!--Banner section-->
-      <div class="banner">
-        <div class="banner-overlay"></div> <!-- Overlay for the banner -->
-        <div class="inside-container top-bar">
-          <div class="row">
-            <div class="col-md-4 top-bar-left order-2 order-md-12">
-              <i class="fas fa-envelope-open-text"></i> 
-              <a href="/about/">info.com</a> <!-- Contact email link -->
-            </div>    
-            <div class="col-md-4 logo order-1 order-md-12">
-              <a href="/homepage/">
-                <img class="logo-img" src="../static/img/logo.png" alt="SymptoTrack Logo"> <!-- Logo image -->
-              </a>
-            </div> 
-            <div class="col-md-4 top-bar-right order-3 order-md-12">
-              <i class="fas fa-phone-alt"></i> 
-              <a href="tel:+39.0874.484661">+1 (785)979-7294</a> <!-- Contact phone link -->
-              <p id="date"></p>
-              <a href="profile.html" class="btn btn-primary" id="userButton"  style="margin: 0 auto; background-color: #7b6cd5; color: #fff; border: none;">User's Name</a>
-            </div>       
-          </div>      
-          <div class="motivational-quote-container">
-            <p class="motivational-quote" id="motivationalQuote"></p>
-          </div>
-          <script>
-            // Fetch and display a motivational quote
-            fetch('https://type.fit/api/quotes')
-              .then(response => response.json())
-              .then(data => {
-                // Get a random quote from the array
-                const randomIndex = Math.floor(Math.random() * data.length);
-                const randomQuote = data[randomIndex].text;
-        
-                // Display the quote with white text
-                const quoteElement = document.getElementById('motivationalQuote');
-                quoteElement.textContent = randomQuote;
-                quoteElement.style.color = 'Black'; // Set text color to white
-                quoteElement.alignment = center;
-              })
-              .catch(error => console.error('Error fetching motivational quote:', error));
-          </script>
-        </div>
-        
-        <div class="inside-container banner-content">
-          <div class="row">
-            <div class="col-12 content-col">
-              <h1 class="site-title">Be peaceful in mind and healthy in Body!</h1> <!-- Main site title -->
-              <!-- <p class="site-title-desc">At solmen va esser necessi fa uniform grammatica, pronunciation plu sommun paroles.</p> Site title description -->
-            <!-- Add a option to choose color -->
-              <div class="color-picker-container">
-                <label for="color-picker">Choose a color:</label>
-                <input type="color" id="color-picker" value="#69218a">
-              </div>
-            </div>
-             <!-- JavaScript Code for displaying current date-->
-            <script>
-              var n = new Date(); 
-              var y = n.getFullYear(); //getting year
-              var m = n.getMonth() + 1; //month
-              var d = n.getDate(); //date
-              document.getElementById("date").innerHTML = m + "/" + d + "/" + y;  //putting all together for the formatting
-            </script>
-          </div>
-        </div>
-      </div>
+{% block content%}
      
       <!--Service-->
       <!-- This code defines three "service" sections, each consisting of an SVG image, a title, and a description. Each section is contained within a <div> element with the class "col-lg-4" for layout purposes. The titles "Figure_1," "Figure_2," and "Figure_3" are displayed as links, and descriptions provide additional information about each service. Note that the SVG images are currently commented out and not displayed; to show the images, the comment tags around the SVG paths within the <g> elements should be removed. This code is intended to be part of a web page layout showcasing different features or offerings in a grid format. -->
@@ -213,36 +118,4 @@ Postconditions: No return values.
         </div>
       </div>
 
-        <!--Copyright-->
-      <footer class="footer">
-        <div class="copyright">
-          <div class="inside-container">
-            <div class="row">
-              <div class="col-md-6 order-2 order-md-12">
-                <p>&copy; 2023 All Rights Reserved. Created by SymptoTrack<a href="" class="created-by"></a></p> <!-- Copyright notice -->
-              </div>
-              <div class="col-md-6 social order-1 order-md-12">                
-                <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Social media icons -->
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-              </div>
-            </div>
-        </div>
-      </footer>
-    </div>
-    <!-- Optional JavaScript -->
-    <script>
-      const colorPicker = document.getElementById("color-picker");
-    
-      colorPicker.addEventListener("input", function () {
-        const selectedColor = colorPicker.value;
-        document.documentElement.style.setProperty("--primary-color", selectedColor);
-      });
-    </script>
-    <script src="../static/js/jquery.js"></script> <!-- new jquery 12.3, Sarah -->
-    <script src="../static/js/scripts.js"></script><!-- establishes script.js connection, Sarah -->
-    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
-  </body>
-</html>
+{% endblock %}
