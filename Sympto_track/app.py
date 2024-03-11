@@ -3,7 +3,7 @@
 # • Description: Establishes signal to MongoDb Cluster and Sample Collections and between the frontend html pages.
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 02.11.2024
+# • Latest Revision: 03.10.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster
@@ -71,4 +71,10 @@ def homepage():
 @login_required
 def symptom_input():
     return render_template('other html/symptom_input.html')
+
+
+@app.route('/profile/')
+@login_required
+def profile():
+    return render_template('profile.html')
 
