@@ -67,17 +67,16 @@ def register():
 @app.route('/homepage/')
 @login_required
 def homepage():
-    # Fetch pain log data
     pain_logs = PainLog().get_pain_logs(session['user']['_id'])
 
-    # Prepare data for chart
+
     labels = []
     values = []
-    descriptions = []  # Collect pain descriptions
+    descriptions = []  
     for log in pain_logs:
         labels.append(log['pain_date'])
         values.append(log['pain_input'])
-        descriptions.append(log['pain_description'])  # Collect pain descriptions
+        descriptions.append(log['pain_description'])  
 
     return render_template('homepage_new.html', labels=labels, values=values, descriptions=descriptions)
 
