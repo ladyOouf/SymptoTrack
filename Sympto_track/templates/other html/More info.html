@@ -1,59 +1,40 @@
-<!--Name of Code artifact: Meds.html
-Description: This code is responsible for getting the user medication data.
-Authors: Freshta Z, Fatima A
-Date Creation : October 18, 2023
+<!--Name of Code artifact: Symtotrack.html
+Description: This code is responsible for getting the user age and contact information.
+Authors: Freshta Zaheer
+Date Creation : October 2, 2023
 Date Revised: March 24, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
+
+
 -->
 {% extends "base.html" %}
 
 
 {% block content%}
      
-      <div class="page-content">
-        <!-- Info section -->
-        <div class="inside-container form-section">
-            <!-- Container for form image -->
-            <div class="row">
-                <div class="form-img">
-                    <img src="../../static/img/med-1.png" class="form-img" alt="">
-                </div>
+      
+    
+    <!-- Form section -->
+      <!-----This form will ask for additional information from user, such as contact infomation and user's age---->
+    <div class="inside-container form-section">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="display-5">Tell us more about yourself</h3> <!-- Section heading -->
+          <form>
+            <div class="form-group">
+              <label for="contactNumber">Contact Number</label> <!-- Label for contact number input -->
+              <input type="tel" class="form-control" id="contactNumber" name="contactNumber" placeholder="Contact Number"> <!-- Contact number input field -->
             </div>
-            <!-- Title row for Info section -->
-            <div class="row sections-detail">
-                <div class="col-12">
-                    <h2 class="section-title">Medication Name</h2>
-                    <h2 class="section-subheading">Strength</h2>
-                </div>
+            <div class="form-group">
+              <label for="age">Age</label> <!-- Label for age input -->
+              <input type="number" class="form-control" id="age" name="age" placeholder="Age" min="0"> <!-- Age input field with minimum value 0 -->
             </div>
-            <div class="container my-5">
-                <!-- Static display for med info -->
-                <div class="row my-3">
-                    <div class="col-12">
-                        <!-- Displays Med generic name -->
-                        <p><strong>Generic Name:</strong> [Generic Name]</p>
-                    </div>
-                </div>
-                <div class="row my-3">
-                    <div class="col-12">
-                        <!-- Displays Med form -->
-                        <p><strong>Medication Form:</strong> [Medication Form]</p>
-                    </div>
-                </div>
-                <div class="row my-3">
-                    <div class="col-12">
-                        <!-- Displays Med dosing schedule -->
-                        <p><strong>Dosing Schedule:</strong> [Dosing Schedule]</p>
-                    </div>
-                </div>
-                <div class="row my-3">
-                    <div class="col-12">
-                        <!-- Displays Med instructions -->
-                        <p><strong>Instructions:</strong> [Additional Instructions]</p>
-                    </div>
-                </div>
-            </div>
+                        <a href="/homepage/" class="btn btn-primary">Submit </a>  <!-- Submit button -->
+          </form>
         </div>
+      </div>
+    </div>
      
-        {% endblock %}
+
+    {% endblock %}
