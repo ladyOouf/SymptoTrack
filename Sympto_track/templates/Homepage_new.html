@@ -2,7 +2,7 @@
 Description: This code is This page is responsible for providing easy access to our services through intuitive buttons and a user-friendly interface, ensuring a seamless experience for our visitors.
 Authors: Freshta Z, Ava G, Sree K, Sarah M
 Date Creation : October 2, 2023
-Date Revised: March 10, 2024
+Date Revised: March 24, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -16,45 +16,51 @@ Postconditions: No return values.
       <!-- This code defines three "service" sections, each consisting of an SVG image, a title, and a description. Each section is contained within a <div> element with the class "col-lg-4" for layout purposes. The titles "Figure_1," "Figure_2," and "Figure_3" are displayed as links, and descriptions provide additional information about each service. Note that the SVG images are currently commented out and not displayed; to show the images, the comment tags around the SVG paths within the <g> elements should be removed. This code is intended to be part of a web page layout showcasing different features or offerings in a grid format. -->
 
       <div class="page-content">
-        <div class="inside-container service-section">
-          <div class="row service-detail">
-          
-              <div class="col-lg-4">
-                <svg version="1.1" class="service-detail-img" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                          viewBox="0 0 90 65" style="enable-background:new 0 0 90 65;" xml:space="preserve">
-                        <g id="Icon_3_">
-                          <g>
-                        </g>
-                        </g>
-                        </svg>
-                <a href="#"><h3 class="service-title">Figure_1</h3></a>
-                <p class="service-desc">It va esser tam simplic quam Occidental in fact, it va esser Occidental.</p>
+            <div class="page-content">
+                <!-- Existing content goes here -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="chart-section">
+                            <h2 class="text-center">Pain Chart</h2>
+                            <canvas id="painChart" width="150" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-4">
-              <svg version="1.1" class="service-detail-img" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 90 65" style="enable-background:new 0 0 90 65;" xml:space="preserve">
-              <g id="Icon_4_">
-                <g>
-              </g>
-              </g>
-              </svg>
-              <a href="#"><h3 class="service-title">Figure_2</h3></a>
-              <p class="service-desc">It va esser tam simplic quam Occidental A un gleso va semblar simplificat.</p>
-            </div>
-            <div class="col-lg-4">
-              <svg version="1.1" class="service-detail-img" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                viewBox="0 0 90 65" style="enable-background:new 0 0 90 65;" xml:space="preserve">
-              <g id="Icon_5_">
-                <g>
-              </g>
-              </g>
-              </svg>
-              <a href="#"><h3 class="service-title">Figure_3</h3></a>
-              <p class="service-desc">It va esser tam simplic quam Occidental A un gleso va semblar simplificat.</p>
-            </div>
-          </div>
+    <!-- Pain chart section -->
+        <div class="chart-section">
+            <canvas id="painChart" width="150" height="100"></canvas>
+
+            <!-- JavaScript code for Chart.js -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                var ctx = document.getElementById('painChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar', // Change chart type to bar
+                    data: {
+                        labels: {{ labels|tojson }},
+                        datasets: [{
+                            label: 'Pain Level',
+                            data: {{ values|tojson }},
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>
         </div>
-     
+    </div>
+
         <!--Buttons-->
         <!-- This section of the web page is dedicated to "Buttons" and features a grid layout with four columns, each representing a button. It begins with a title ("Buttons") and a section description. Inside the section, a grid layout is established using Bootstrap's "col-lg-3" class for each column. Each column contains a placeholder image, a link, a title ("Button"), and a description ("Button"). However, the specific content, functionality, and images for these buttons are not provided in the code and should be customized separately. This code serves as a template for creating and displaying button elements on the web page. -->
 
@@ -102,7 +108,7 @@ Postconditions: No return values.
                 <div class="trainer-img">
                   <img src="../static/img/stress.png" class="trainer-in-img" alt="">
                 </div>
-                <a href="/homepage/"><h3 class="trainer-title">Stress</h3></a>
+                <a href="/stressresources/"><h3 class="trainer-title">Stress</h3></a>
                 <p class="trainer-desc">Some extra resources for you!</p>
               </div>
 
@@ -116,6 +122,6 @@ Postconditions: No return values.
             </div>
           </div>
         </div>
-      </div>
+
 
 {% endblock %}
