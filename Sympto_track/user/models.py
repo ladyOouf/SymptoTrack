@@ -3,7 +3,7 @@
 # • Description: creates the user session
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 02.25.2024
+# • Latest Revision: 03.24.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster
@@ -83,8 +83,10 @@ class PainLog:
             "pain_date": str(pain_date),
             "pain_description": pain_description
         }
-
-        # Insert the pain log entry into the database
+        print("Received pain_input:", pain_input)
         db.pain.insert_one(pain_log_entry)
 
         return jsonify({"message": "Pain log entry recorded successfully"}), 200
+
+    def get_pain_logs(self, user_id):
+        return db.pain.find({"user_id": user_id})
