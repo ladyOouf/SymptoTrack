@@ -1,8 +1,8 @@
 <!--Name of Code artifact: symptom_input.html
 Description: This code is responsible for getting the user's pain input.
-Authors: Ava G, Sree Kondi
+Authors: Ava G, Sree Kondi, Sarah M
 Date Creation : October 15, 2023
-Date Revised: March 17, 2023
+Date Revised: March 24, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values. -->
 
@@ -12,7 +12,17 @@ Postconditions: No return values. -->
 
 
 {% block content%}
-
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>Symptom Input Page</title>
+      </head>
+      <style>
+        form {
+            text-align: center;
+            font-size: 25px; /* You can adjust the font size as needed */
+        }
+      </style>
       <!--Page Heading-->
       <br>
       <p style="text-align:center; font-size: 30px; font-family: Roboto Slab;">Symptom Input</p>
@@ -56,40 +66,13 @@ Postconditions: No return values. -->
           </form>
         </div>
 
-
-
         <script>
     // Update slider value display dynamically
     document.getElementById('slider').addEventListener('input', function() {
         document.getElementById('sliderValue').textContent = this.value;
     });
         </script>
-      </html>
-      
 
-     
-      <!--Copyright-->
-      <footer class="footer">
-        <div class="copyright">
-          <div class="inside-container">
-            <div class="row">
-              <div class="col-md-6 order-2 order-md-12">
-                <p>&copy; 2023 All Rights Reserved. Created by SymptoTrack<a href="" class="created-by"></a></p> <!-- Copyright notice -->
-              </div>
-              <div class="col-md-6 social order-1 order-md-12">                
-                <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Social media icons -->
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>    
-    <!-- Optional JavaScript -->
-    <script src="../static/js/jquery.js"></script> <!-- new jquery 12.3, Sarah -->
-    <script src="../static/js/scripts.js"></script> <!-- establishes script.js connection, Sarah -->
-    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
-  </body>
+
+      </html>
   {% endblock %}
