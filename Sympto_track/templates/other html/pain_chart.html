@@ -2,19 +2,24 @@
 Description: This code is responsible for getting the user's pain input chart
 Authors: Sarah M
 Date Creation : March 15, 2024
-Date Revised: March 24, 2024
+Date Revised: March 28, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values. -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pain Chart</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
+
+
+{% block content%}
+<div class="trainer-section">
+    <div class="row sections-detail">
+      <div class="col-12">
+        <h2 class="section-title">Visualization</h2>
+        <p class="section-title-desc"></p>
+      </div>
+    </div>
+    <div class="inside-container">
+      <div class="row trainer-col">
+        <div class="col-lg-3">
     <canvas id="painChart" width="400" height="400"></canvas>
     <script>
         var ctx = document.getElementById('painChart').getContext('2d');
@@ -41,5 +46,9 @@ Postconditions: No return values. -->
             }
         });
     </script>
-</body>
-</html>
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
