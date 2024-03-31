@@ -2,16 +2,16 @@
 Description: This code is responsible for getting the user's pain input.
 Authors: Ava G, Sree Kondi, Sarah M
 Date Creation : October 15, 2023
-Date Revised: March 24, 2024
+Date Revised: March 30, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values. -->
 
-
-      
 {% extends "base.html" %}
 
 
 {% block content%}
+
+
       <!DOCTYPE html>
       <html>
       <head>
@@ -31,19 +31,19 @@ Postconditions: No return values. -->
       <br>
       <!--Creating the slider-->
 
-      
+
       <br>
 
-        <div class="container my-5">
-          <form name="symptom_input" method="POST" id="painForm">
+<div class="container my5">
+          <form name="symptom_input" method="POST">
             <!-- Creating the slider -->
-            <label for="slider">Rank your pain from one to ten:</label>
+            <label for="slider"="font-family: Helvetica Neue;">Rank your pain from one to ten:</label>
             <input type="range" id="slider" name="pain_input" min="0" max="10" step="1" value="0">
             <output for="slider" id="sliderValue">0</output><br><br>
 
             <div class="row my-3">
               <div class="col-md-6">
-                <input type="date" class="form-control" placeholder="Date :" name="pain_date" required>
+                <input type="date" class="form-control" placeholder="Date :" name="pain_date">
               </div>
             </div>
 
@@ -54,17 +54,19 @@ Postconditions: No return values. -->
               </div>
             </div>
 
+            <!-- add button -->
+            <div class="container my-5">
+              <button id="addSliderButton" class="btn btn-primary">Add more symptoms</button>
+            </div>
+
             <!-- Submit button -->
             <div class="container my-5">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-
-            <!-- Error message container -->
-            <div class="container my-3">
-              <p class="error-message text-danger" style="display: none;"></p>
-            </div>
           </form>
         </div>
+
+
 
         <script>
     // Update slider value display dynamically
@@ -75,4 +77,4 @@ Postconditions: No return values. -->
 
 
       </html>
-  {% endblock %}
+{% endblock %}
