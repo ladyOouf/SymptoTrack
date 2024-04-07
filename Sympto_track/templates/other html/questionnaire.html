@@ -87,17 +87,17 @@ Postconditions: No return values.
       <!-- page heading -->
       <h2 class="section-title">Questionnaire</h2>
         <!-- page subheading -->
-        <p class="text-center">Please answer the questions to the best of your ability. Your answers will be stored securely.</p>
+        <p class="text-center">Please answer any relevant questions. You can leave questions that do not pertain to you blank.</p>
         
         <form>
           <!-- section for pain duration -->
             <div class="form-section">
                 <h4 class="form-section-header">Pain Duration</h4>
-                <input type="number" class="form-control" id="walkPainFree" name="walkPainFree" min="0" placeholder="How many minutes can you walk without pain?">
-                <input type="number" class="form-control" id="standPainFree" name="standPainFree" min="0" placeholder="How many minutes can you stand without pain?">
-                <input type="number" class="form-control" id="sitPainFree" name="sitPainFree" min="0" placeholder="How many minutes can you sit without pain?">
+                <input type="number" class="form-control" id="walkPainFree" name="walkPainFree" min="0" placeholder="How many minutes can you walk without pain (or without pain worsening)?">
+                <input type="number" class="form-control" id="standPainFree" name="standPainFree" min="0" placeholder="How many minutes can you stand without pain (or without pain worsening)?">
+                <input type="number" class="form-control" id="sitPainFree" name="sitPainFree" min="0" placeholder="How many minutes can you sit without pain (or without pain worsening)?">
             </div>
-            
+
             <!-- section for pain areas -->
             <div class="form-section">
                 <h4 class="form-section-header">Pain Areas</h4>
@@ -129,23 +129,23 @@ Postconditions: No return values.
             <div class="form-section">
                 <h4 class="form-section-header">Pain Description</h4>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="sleepDisturbance" name="sleepDisturbance">
+                    <input class="form-check-input" type="checkbox" id="sleepDisturbance" name="painType" data-points="1">
                     <label class="form-check-label" for="sleepDisturbance">Has the pain kept you from sleeping?</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="aching" name="painType" value="aching">
+                    <input class="form-check-input" type="checkbox" id="aching" name="painType" value="aching" data-points="1">
                     <label class="form-check-label" for="aching">Aching</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="sharp" name="painType" value="sharp">
+                    <input class="form-check-input" type="checkbox" id="sharp" name="painType" value="sharp" data-points="2">
                     <label class="form-check-label" for="sharp">Sharp</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="dull" name="painType" value="dull">
+                    <input class="form-check-input" type="checkbox" id="dull" name="painType" value="dull" data-points="1">
                     <label class="form-check-label" for="dull">Dull</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="shooting" name="painType" value="shooting">
+                    <input class="form-check-input" type="checkbox" id="shooting" name="painType" value="shooting" data-points="2">
                     <label class="form-check-label" for="shooting">Shooting</label>
                 </div>
             </div>
@@ -153,12 +153,15 @@ Postconditions: No return values.
             <div class="form-section">
                 <h4 class="form-section-header">Pain Frequency and Location</h4>
                 <select class="form-control" id="painFrequency" name="painFrequency">
-                    <option value="constant">Constant</option>
-                    <option value="occasional">Occasional</option>
+                    <option value="never" data-points="0">Never</option>
+                    <option value="constant" data-points="4">Constant</option>
+                    <option value="occasional" data-points="1">Occasional</option>
+
                 </select>
                 <select class="form-control" id="painLocation" name="painLocation">
-                    <option value="stationary">Stays in one place</option>
-                    <option value="radiate">Radiates</option>
+                    <option value="nowhere" data-points="0">No pain</option>
+                    <option value="stationary" data-points="1">Stays in one place</option>
+                    <option value="radiate" data-points="2">Radiates</option>
                 </select>
             </div>
             <div class="button-container">
@@ -166,6 +169,7 @@ Postconditions: No return values.
             </div>
                 
         </form>
+        <div id="result"></div>
     </div>
     <script>
         function toggleOtherTextbox() {
@@ -174,6 +178,71 @@ Postconditions: No return values.
             text.style.display = checkbox.checked ? "block" : "none";
         }
         document.getElementById("otherCheckbox").addEventListener('change', toggleOtherTextbox);
+    </script>
+    <script>
+        document.getElementById('otherCheckbox').addEventListener('change', toggleOtherTextbox);
+
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            createPainScore();
+        });
+
+        function pointCalculator(minutes, points)
+        {
+            if (minutes < 10)
+            {
+                points = 6;
+            }
+            else if (minutes < 20)
+            {
+                points = 4;
+            }
+            else if (minutes < 40)
+            {
+                points = 2;
+            }
+            else
+            {
+                points = 1;
+            }
+
+            return (points);
+        }
+
+        function createPainScore(){
+            var walk = document.getElementById('walkPainFree').value;
+            var stand = document.getElementById('standPainFree').value;
+            var sit = document.getElementById('sitPainFree').value;
+
+            q1 = pointCalculator(walk);
+            q2 = pointCalculator(stand);
+            q3 = pointCalculator(sit);
+
+            var painAreas = [];
+            document.querySelectorAll('input[name="painAreas"]:checked').forEach(function(checkbox) {
+            painAreas.push(checkbox.value);
+            });
+
+            var q4 = painAreas.length;
+
+            var q5 = 0;
+            document.querySelectorAll('input[name="painType"]:checked').forEach(function(checkbox) {
+                q5 += parseInt(checkbox.getAttribute('data-points'), 10); // Add points for each checked box
+            });
+
+            var q6 = 0;
+            var painFrequencyPoints = parseInt(document.querySelector('#painFrequency option:checked').getAttribute('data-points'), 10);
+            q6 += painFrequencyPoints;
+
+            var q7 = 0;
+            var painLocationPoints = parseInt(document.querySelector('#painLocation option:checked').getAttribute('data-points'), 10);
+            q7 += painLocationPoints;
+
+            totalPoints = q1 + q2 + q3 + q4 + q5 + q6 + q7;
+
+            document.getElementById('result').innerHTML = 'Result: ' + totalPoints;
+        }
+
     </script>
 </body>
 {% endblock %}
