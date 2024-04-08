@@ -2,7 +2,7 @@
 Description: This code asks the user questions about their symptom.
 Authors: Ava G
 Date Creation : November 17, 2023
-Date Revised: March 24, 2023
+Date Revised: April 7, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -77,6 +77,22 @@ Postconditions: No return values.
     justify-content: center; /* Center horizontally */
     align-items: center;     /* Center vertically (if the container has a specific height) */
     height: 100px;           /* Example height, you can adjust this as needed */
+}
+#result {
+        font-size: 36px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #8229F2 ;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+}
+
+#result:hover {
+    background-color: #F85781;
 }
 
 
@@ -169,7 +185,8 @@ Postconditions: No return values.
             </div>
                 
         </form>
-        <div id="result"></div>
+        <!-- <div id="result"></div> -->
+        <div id="result">Result: <span id="resultValue"></span></div>
     </div>
     <script>
         function toggleOtherTextbox() {
