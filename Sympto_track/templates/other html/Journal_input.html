@@ -1,8 +1,8 @@
-<!--Name of Code artifact: Journal_output.html
-Description: This code is responsible for displaying the user daily journal data
+<!--Name of Code artifact: Journal_input.html
+Description: This code is responsible for getting the user daily journal data
 Authors: Freshta Z
 Date Creation : October 28, 2023
-Date Revised: April  7, 2024
+Date Revised: April  7, 2023
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -10,65 +10,73 @@ Postconditions: No return values.
 
 
 {% block content%}
-<!-- The overall section for the journal part of the webpage -->
+     
+      <!-- The overall section for the journal part of the webpage -->
 <div class="container my-5">
-    <!-- Header for the journal section with centered text -->
+    <form name="journal_input" method="POST">
+
     <div class="header text-center">
-        <!-- The title of the journal section -->
         <h1 class="text-dark">Daily Journal</h1>
     </div>
 
-    <!-- Date selection form -->
-    <form method="POST" class="mb-3">
-        <div class="form-row align-items-center">
-            <div class="col-auto">
-                <label for="selectedDate" class="sr-only">Select Date:</label>
-                <input type="date" class="form-control" id="selectedDate" name="selected_date">
-            </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </form>
-
-    <!-- Display selected date -->
-    {% if selected_date %}
+    <!-- Row for input fields: Date and Weather -->
     <div class="row my-3">
-        <div class="col-md-12">
-            <p><strong>Selected Date:</strong> {{ selected_date }}</p>
-        </div>
-    </div>
-    {% endif %}
-
-    <!-- Iterate over journal entries -->
-    {% if journal_entries %}
-    <div class="row justify-content-center">
-        {% for entry in journal_entries %}
         <div class="col-md-6">
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h5 class="card-title">Date: {{ entry.journal_date }}</h5>
-                    <p class="card-text"><strong>Weather:</strong> {{ entry.weather }}</p>
-                    <p class="card-text"><strong>Mood:</strong> {{ entry.mood }}</p>
-                    <p class="card-text"><strong>Grateful:</strong> {{ entry.grateful }}</p>
-                    <p class="card-text"><strong>Goals:</strong> {{ entry.goals }}</p>
-                    <p class="card-text"><strong>Notes:</strong> {{ entry.notes }}</p>
-                    <p class="card-text"><strong>For Tomorrow:</strong> {{ entry.tomorrow }}</p>
-                </div>
-            </div>
+            <input type="date" class="form-control" placeholder="Date :" name="journal_date">
         </div>
-        {% endfor %}
+        <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="How was the Weather Today?" name="weather">
+        </div>
     </div>
-    {% endif %}
+
+{#    <!-- Row for the To Do List input field -->
+    <div class="row my-3">
+        <!-- Full-width column for the To Do List input -->
+        <div class="col-12">
+            <!-- Input field for the To Do List -->
+            <input type="text" class="form-control input-text" placeholder="To Do List">
+        </div>
+    </div>#}
+
+    <!-- Row for the Mood input field -->
+    <div class="row my-3">
+        <div class="col-md-6">
+            Mood:
+            <input type="text" class="form-control input-text" placeholder="How are you feeling today?" name="mood">
+        </div>
+
+    </div>
+
+    <!-- Row for the Grateful input field -->
+    <div class="row my-3">
+        <div class="col-12">
+            <textarea class="form-control input-textarea" placeholder="Today, I'm Grateful for" name="grateful"></textarea>
+        </div>
+    </div>
+
+    <!-- Row for the Goals input field -->
+    <div class="row my-3">
+        <div class="col-12">
+            <input type="text" class="form-control input-text" placeholder="Enter some personal Goals" name="goals">
+        </div>
+    </div>
+
+    <!-- Row for the Notes textarea -->
+    <div class="row my-3">
+        <div class="col-12">
+            <textarea class="form-control input-textarea" placeholder="Notes" name="notes"></textarea>
+        </div>
+    </div>
+
+    <!-- Row for the For Tomorrow input field -->
+    <div class="row my-3">
+        <div class="col-12">
+            <input type="text" class="form-control input-text" placeholder="For Tomorrow" name="tomorrow">
+        </div>
+    </div>
+    <!-- Button to submit the journal form, linking to the homepage -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 
-
-
-{#</div>#}
-{#            <!-- Link to return to the input form or homepage -->#}
-{#            <!-- <a href="journal.html" class="btn btn-primary">Edit Journal</a> -->#}
-{#            <button type="submit">Edit Journal</button>#}
-{#             #}
-{#        </div>#}
-
-        {% endblock %}
+     {% endblock %}
