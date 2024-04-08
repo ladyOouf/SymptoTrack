@@ -2,7 +2,7 @@
 Description: This code is responsible for getting the user daily journal data
 Authors: Freshta Z
 Date Creation : October 28, 2023
-Date Revised: March 24, 2024
+Date Revised: April  7, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -13,85 +13,70 @@ Postconditions: No return values.
      
       <!-- The overall section for the journal part of the webpage -->
 <div class="container my-5">
-    <!-- Header for the journal section with centered text -->
+    <form name="journal_input" method="POST">
+
     <div class="header text-center">
-        <!-- The title of the journal section -->
         <h1 class="text-dark">Daily Journal</h1>
     </div>
 
     <!-- Row for input fields: Date and Weather -->
     <div class="row my-3">
-        <!-- Column for the date input -->
         <div class="col-md-6">
-            <!-- Input field for the date -->
-            <input type="date" class="form-control" placeholder="Date :">
+            <input type="date" class="form-control" placeholder="Date :" name="journal_date">
         </div>
-        <!-- Column for the weather input -->
         <div class="col-md-6">
-            <!-- Input field for the weather -->
-            <input type="text" class="form-control" placeholder="Weather">
+            <input type="text" class="form-control" placeholder="How was the Weather Today?" name="weather">
         </div>
     </div>
 
-    <!-- Row for the To Do List input field -->
+{#    <!-- Row for the To Do List input field -->
     <div class="row my-3">
         <!-- Full-width column for the To Do List input -->
         <div class="col-12">
             <!-- Input field for the To Do List -->
             <input type="text" class="form-control input-text" placeholder="To Do List">
         </div>
-    </div>
+    </div>#}
 
     <!-- Row for the Mood input field -->
     <div class="row my-3">
-        <!-- Column for the mood input -->
         <div class="col-md-6">
-            <!-- Label for the mood input -->
             Mood:
-            <!-- Input field for the mood -->
-            <input type="text" class="form-control input-text" placeholder="Mood">
+            <input type="text" class="form-control input-text" placeholder="How are you feeling today?" name="mood">
         </div>
-        
+
     </div>
 
     <!-- Row for the Grateful input field -->
     <div class="row my-3">
-        <!-- Full-width column for the Grateful textarea -->
         <div class="col-12">
-            <!-- Textarea for what the user is grateful for -->
-            <textarea class="form-control input-textarea" placeholder="Today, I'm Grateful for"></textarea>
+            <textarea class="form-control input-textarea" placeholder="Today, I'm Grateful for" name="grateful"></textarea>
         </div>
     </div>
 
     <!-- Row for the Goals input field -->
     <div class="row my-3">
-        <!-- Full-width column for the Goals input -->
         <div class="col-12">
-            <!-- Input field for the Goals -->
-            <input type="text" class="form-control input-text" placeholder="Goals">
+            <input type="text" class="form-control input-text" placeholder="Enter some personal Goals" name="goals">
         </div>
     </div>
 
     <!-- Row for the Notes textarea -->
     <div class="row my-3">
-        <!-- Full-width column for the Notes textarea -->
         <div class="col-12">
-            <!-- Textarea for additional notes -->
-            <textarea class="form-control input-textarea" placeholder="Notes"></textarea>
+            <textarea class="form-control input-textarea" placeholder="Notes" name="notes"></textarea>
         </div>
     </div>
 
     <!-- Row for the For Tomorrow input field -->
     <div class="row my-3">
-        <!-- Full-width column for the For Tomorrow input -->
         <div class="col-12">
-            <!-- Input field for plans for tomorrow -->
-            <input type="text" class="form-control input-text" placeholder="For Tomorrow">
+            <input type="text" class="form-control input-text" placeholder="For Tomorrow" name="tomorrow">
         </div>
     </div>
     <!-- Button to submit the journal form, linking to the homepage -->
-    <!-- <a href="Journal.html" class="btn btn-primary">Submit</a> -->
-    <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 
      {% endblock %}
