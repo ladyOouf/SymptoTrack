@@ -3,7 +3,7 @@
 # • Description: Establishes signal to MongoDb Cluster and Sample Collections and between the frontend html pages.
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 03.24.2024
+# • Latest Revision: 04.07.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster
@@ -17,16 +17,14 @@
 from flask import Flask, render_template, session, flash, redirect, url_for
 from functools import wraps
 from database import db
-from user.models import PainLog
+from user.models import PainLog, Journal
 
 from pymongo import MongoClient
 
 from dotenv import load_dotenv
 import os
 
-# Database
-# load_dotenv()
-# MONGODB_URI = os.environ['MONGODB_URI']
+
 
 app = Flask(__name__)
 app.secret_key = b'\xcc^\x91\xea\x17-\xd0W\x03\xa7\xf8J0\xac8\xc5'
@@ -93,3 +91,18 @@ def profile():
     return render_template('profile.html')
 
 
+@app.route('/journal_input/')
+@login_required
+def journal_input():
+    return render_template('Journal_input _new.html')
+
+
+@app.route('/journal_output/', methods=['GET', 'POST'])
+@login_required
+def journal_output():
+    if request.method == 'POST':
+        selected_date = request.form.get('selected_date')  # Get the selected date from the form
+        user_id = session['user']['_id']
+        journal_entries = Journal().get_journal_entries(user_id, selected_date)
+        return render_template('Journal_output_new.html', journal_entries=journal_entries, selected_date=selected_date)
+    return render_template('Journal_output_new.html')
