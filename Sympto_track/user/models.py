@@ -3,7 +3,7 @@
 # • Description: creates the user session
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 03.24.2024
+# • Latest Revision: 04.07.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster
@@ -90,3 +90,35 @@ class PainLog:
 
     def get_pain_logs(self, user_id):
         return db.pain.find({"user_id": user_id})
+
+
+class Journal:
+
+    def journal_input(self):
+        user_id = session['user']['_id']
+        weather = request.form['weather']
+        journal_date = datetime.datetime.strptime(request.form['journal_date'], '%Y-%m-%d').date()
+        mood = request.form['mood']
+        grateful = request.form['grateful']
+        goals = request.form['goals']
+        notes = request.form['notes']
+        tomorrow = request.form['tomorrow']
+
+        journal_entry = {
+            "user_id": user_id,
+            "journal_date": str(journal_date),
+            "weather": weather,
+            "mood": mood,
+            "grateful": grateful,
+            "goals": goals,
+            "notes": notes,
+            "tomorrow": tomorrow,
+
+        }
+        print("Received mood:", mood)
+        db.journal.insert_one(journal_entry)
+
+        return jsonify({"message": "Journal log entry recorded successfully"}), 200
+
+    def get_journal_entries(self, user_id, selected_date):
+        return db.journal.find({"user_id": user_id, "journal_date": selected_date})
