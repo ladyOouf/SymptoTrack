@@ -2,7 +2,7 @@
 # Description: This code is to initialize the database
 # Authors: Sarah M
 # Date Creation : March 24, 2024
-# Date Revised: March 24, 2024
+# Date Revised: April 7, 2024
 # Preconditions: Empty Strings are not allowed.
 # Postconditions: No return values. -->
 
@@ -17,3 +17,4 @@ client = MongoClient(MONGODB_URI)
 db = client['symptotrack']
 users = db['user_creds']
 symptoms = db['pain']
+journal = db['journal']
