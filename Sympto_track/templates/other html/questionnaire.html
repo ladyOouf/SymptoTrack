@@ -101,11 +101,16 @@ Postconditions: No return values.
 
     <div class="container">
       <!-- page heading -->
+        <form name="question_input" method="POST">
+
       <h2 class="section-title">Questionnaire</h2>
         <!-- page subheading -->
         <p class="text-center">Please answer any relevant questions. You can leave questions that do not pertain to you blank.</p>
 
-        <form>
+
+            <!-- Add a hidden input field to your form -->
+            <input type="hidden" id="totalPoints" name="totalPoints">
+
           <!-- section for pain duration -->
             <div class="form-section">
                 <h4 class="form-section-header">Pain Duration</h4>
@@ -188,6 +193,7 @@ Postconditions: No return values.
         </form>
         <!-- <div id="result"></div> -->
         <div id="result">Result: <span id="resultValue"></span></div>
+
     </div>
     <script>
         function toggleOtherTextbox() {
@@ -196,14 +202,12 @@ Postconditions: No return values.
             text.style.display = checkbox.checked ? "block" : "none";
         }
         document.getElementById("otherCheckbox").addEventListener('change', toggleOtherTextbox);
-    </script>
-    <script>
-        document.getElementById('otherCheckbox').addEventListener('change', toggleOtherTextbox);
 
         document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
             createPainScore();
+            document.getElementById('totalPoints').value = totalPoints;
         });
+
 
         function pointCalculator(minutes, points)
         {
@@ -259,6 +263,7 @@ Postconditions: No return values.
             totalPoints = q1 + q2 + q3 + q4 + q5 + q6 + q7;
 
             document.getElementById('result').innerHTML = 'Result: ' + totalPoints;
+            document.getElementById('totalPoints').value = totalPoints;
         }
 
     </script>
