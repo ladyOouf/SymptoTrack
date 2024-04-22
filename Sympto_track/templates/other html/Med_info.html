@@ -2,7 +2,7 @@
 Description: This code is responsible for getting the user medication data.
 Authors: Freshta Z, Fatima A
 Date Creation : October 18, 2023
-Date Revised: March 24, 2024
+Date Revised: April 21, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -10,21 +10,21 @@ Postconditions: No return values.
 
 
 {% block content%}
-     
+
       <div class="page-content">
         <!-- Info section -->
         <div class="inside-container form-section">
             <!-- Container for form image -->
             <div class="row">
                 <div class="form-img">
-                    <img src="../../static/img/med-1.png" class="form-img" alt="">
+                    <img src="../static/img/med-1.png" class="form-img" alt="">
                 </div>
             </div>
             <!-- Title row for Info section -->
             <div class="row sections-detail">
                 <div class="col-12">
-                    <h2 class="section-title">Medication Name</h2>
-                    <h2 class="section-subheading">Strength</h2>
+                    <h2 class="section-title">{{ med['GenericName'] }}</h2>
+                    <h2 class="section-subheading">{{ med['Strength'] }}</h2>
                 </div>
             </div>
             <div class="container my-5">
@@ -32,28 +32,28 @@ Postconditions: No return values.
                 <div class="row my-3">
                     <div class="col-12">
                         <!-- Displays Med generic name -->
-                        <p><strong>Generic Name:</strong> [Generic Name]</p>
+                        <p><strong>Generic Name:</strong> {{ med['GenericName'] }}</p>
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col-12">
                         <!-- Displays Med form -->
-                        <p><strong>Medication Form:</strong> [Medication Form]</p>
+                        <p><strong>Medication Form:</strong> {{ med['MedicationForm'] }}</p>
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col-12">
                         <!-- Displays Med dosing schedule -->
-                        <p><strong>Dosing Schedule:</strong> [Dosing Schedule]</p>
+                        <p><strong>Dosing Schedule:</strong> {{ med['DosingSchedule'] }}</p>
                     </div>
                 </div>
                 <div class="row my-3">
                     <div class="col-12">
                         <!-- Displays Med instructions -->
-                        <p><strong>Instructions:</strong> [Additional Instructions]</p>
+                        <p><strong>Instructions:</strong> {{ med['Instructions'] }}</p>
                     </div>
                 </div>
             </div>
         </div>
-     
+
         {% endblock %}
