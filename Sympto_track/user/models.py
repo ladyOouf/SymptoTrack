@@ -16,7 +16,11 @@
 
 from flask import Flask, jsonify, request, session, redirect, url_for
 from passlib.hash import pbkdf2_sha256
-from app import db
+from database import db
+import datetime
+from bson import ObjectId
+
+
 import uuid
 
 
@@ -32,7 +36,6 @@ class User:
 
         print(request.form)
 
-        # CREATE THE USER OBJECT
         user = {
             "_id": uuid.uuid4().hex,
             "firstName": request.form['firstName'],
@@ -40,10 +43,9 @@ class User:
             "email": request.form['email'],
             "password": request.form['password']
         }
-        # Encrypt the password
+
         user['password'] = pbkdf2_sha256.encrypt(user['password'])
 
-        # Check for existing email address
         if db.users.find_one({"email": user['email']}):
             return jsonify({"error": "Email address already in use"}), 400
 
@@ -57,16 +59,14 @@ class User:
         return redirect('/')
 
     def login(self):
-
         user = db.users.find_one({
-            "email": request.form.get('email')
+            "email": request.form['email']
         })
 
-        if user and pbkdf2_sha256.verify(request.form.get('password'), user['password']):
+        if user and pbkdf2_sha256.verify(request.form['password'], user['password']):
             return self.start_session(user)
 
         return jsonify({"error": "Invalid login credentials"}), 401
-
 
 
 class PainLog:
@@ -122,3 +122,55 @@ class Journal:
 
     def get_journal_entries(self, user_id, selected_date):
         return db.journal.find({"user_id": user_id, "journal_date": selected_date})
+
+
+class Medslist:
+
+    def med_input(self):
+        user_id = session['user']['_id']
+        GenericName = request.form['GenericName']
+        Strength = request.form['Strength']
+        MedicationForm = request.form['MedicationForm']
+        DosingSchedule = request.form['DosingSchedule']
+        Instruction = request.form['Instruction']
+
+        med_log_entry = {
+            "user_id": user_id,
+            # "brandName": brandName,
+            "GenericName": GenericName,
+            "Strength": Strength,
+            "MedicationForm": MedicationForm,
+            "DosingSchedule": DosingSchedule,
+            "Instruction": Instruction,
+        }
+        print("Received Meds:", Strength )
+        db.meds.insert_one(med_log_entry)
+
+        return jsonify({"message": "Med entry recorded successfully"}), 200
+
+    def get_meds(self, user_id):
+        return db.meds.find({"user_id": user_id})
+
+    def find_one(self, med_id):
+        return db.meds.find_one({'_id': ObjectId(med_id)})
+
+
+class Result:
+    def result_input(self):
+        user_id = session['user']['_id']
+        result_date = datetime.datetime.strptime(request.form['Date'], '%Y-%m-%d').date()
+        results = request.form.get('totalPoints')
+
+        result_entry = {
+            "user_id": user_id,
+            "Date": str(result_date),
+            "totalPoints": results,
+
+        }
+        print("Received results:", results )
+        db.pain_results.insert_one(result_entry)
+
+        return jsonify({"message": "results entry recorded successfully"}), 200
+
+    def get_results(self, user_id):
+        return db.pain_results.find({"user_id": user_id})
