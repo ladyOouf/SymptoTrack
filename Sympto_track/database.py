@@ -2,7 +2,7 @@
 # Description: This code is to initialize the database
 # Authors: Sarah M
 # Date Creation : March 24, 2024
-# Date Revised: April 7, 2024
+# Date Revised: April 21, 2024
 # Preconditions: Empty Strings are not allowed.
 # Postconditions: No return values. -->
 
@@ -18,3 +18,5 @@ db = client['symptotrack']
 users = db['user_creds']
 symptoms = db['pain']
 journal = db['journal']
+meds = db['meds']
+pain_results = db['pain_results']
