@@ -8,90 +8,41 @@ Postconditions: No return values.
 -->
 {% extends "base.html" %}
 
-
-{% block content%}
-    
-      <div class="page-content">
-        <!--Buttons-->
-        <!-- This section of the web page is dedicated to "Buttons" and features a grid layout with four columns, each representing a button. It begins with a title ("Buttons") and a section description. Inside the section, a grid layout is established using Bootstrap's "col-lg-3" class for each column. Each column contains a placeholder image, a link, a title ("Button"), and a description ("Button"). However, the specific content, functionality, and images for these buttons are not provided in the code and should be customized separately. This code serves as a template for creating and displaying button elements on the web page. -->
-        <div class="trainer-section medsList">
-          <div class="row sections-detail">
-            <div class="col-12">
-              <h2 class="section-title">Medications</h2>
-            </div>
+{% block content %}
+  <div class="page-content">
+    <!-- Medications -->
+    <div class="trainer-section medsList">
+      <div class="row sections-detail">
+        <div class="col-12">
+          <h2 class="section-title">Medications</h2>
+        </div>
+      </div>
+      <div class="inside-container">
+        <div class="row trainer-col">
+          <div class="col-12">
+            <h3 class="section-subheading">Currently Taking</h3>
           </div>
-          <div class="inside-container">
-            <div class="row trainer-col">
-              <div class="col-12">
-                <h3 class="section-subheading">Currently Taking</h3>
+          <div class="meds-container">
+            {% for med in meds %}
+              <div class="col-lg-3">
+                <div class="trainer-img">
+                  <img src="../static/img/med-1.png" class="trainer-in-img" alt="">
+                </div>
+                <a href="/meds_info/{{ med['_id'] }}"><h3 class="trainer-title">{{ med['GenericName'] }}</h3></a>
+                <p class="trainer-desc">{{ med['Strength'] }} {{ med['MedicationForm'] }}</p>
               </div>
-              <div class="meds-container">
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="../../static/img/med-1.png" class="trainer-in-img" alt="">
-                  </div>              
-                  <a href="#"><h3 class="trainer-title">Med 1</h3></a>
-                  <p class="trainer-desc">10 mg </p>
-                </div>
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="../../static/img/med-2.png" class="trainer-in-img" alt="">
-                  </div>
-                  <a href="#"><h3 class="trainer-title">Med 2</h3></a>
-                  <p class="trainer-desc">15 mg</p>
-                </div>
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="../../static/img/med-3.png" class="trainer-in-img" alt="">
-                  </div>
-                  <a href="#"><h3 class="trainer-title">Med 3</h3></a>
-                  <p class="trainer-desc">20 mg</p>
-                </div>
-                <!-- Add medication button -->
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="../../static/img/plus_icon.png" class="trainer-in-img" alt="">
-                  </div>
-                  <a href="/meds_input/"><h3 class="trainer-title">Add Medication</h3></a>
-                  <p class="trainer-desc"></p>
-                </div>
+            {% endfor %}
+            <!-- Add medication button -->
+            <div class="col-lg-3">
+              <div class="trainer-img">
+                <img src="../static/img/plus_icon.png" class="trainer-in-img" alt="">
               </div>
-              <div class="col-12">
-                <h3 class="section-subheading">Past Medications</h3>
-              </div>
-              <div class="meds-container">
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="../../static/img/med-5.png" class="trainer-in-img" alt="">
-                  </div>
-                  <a href="#"><h3 class="trainer-title">Med 5</h3></a>
-                  <p class="trainer-desc">Last Taken: [Date]</p>
-                </div>
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="../../static/img/med-6.png" class="trainer-in-img" alt="">
-                  </div>
-                  <a href="#"><h3 class="trainer-title">Med 6</h3></a>
-                  <p class="trainer-desc">Last Taken: [Date]</p>
-                </div>
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="" class="trainer-in-img" alt="">
-                  </div>
-                  <a href="#"><h3 class="trainer-title"></h3></a>
-                  <p class="trainer-desc"></p>
-                </div>
-                <div class="col-lg-3">
-                  <div class="trainer-img">
-                    <img src="" class="trainer-in-img" alt="">
-                  </div>
-                  <a href="#"><h3 class="trainer-title"></h3></a>
-                  <p class="trainer-desc"></p>
-                </div>
-              </div>
+              <a href="/meds_input/"><h3 class="trainer-title">Add Medication</h3></a>
+              <p class="trainer-desc"></p>
             </div>
           </div>
         </div>
       </div>
-
-      {% endblock %}
+    </div>
+  </div>
+{% endblock %}
