@@ -2,7 +2,7 @@
 Description: This code asks the user questions about their symptom.
 Authors: Ava G
 Date Creation : November 17, 2023
-Date Revised: April 7, 2024
+Date Revised: April 21, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -109,6 +109,7 @@ Postconditions: No return values.
           <!-- section for pain duration -->
             <div class="form-section">
                 <h4 class="form-section-header">Pain Duration</h4>
+                <input type="date" class="form-control" id="Date" name="Date" min="0" placeholder="What is the date today? ">
                 <input type="number" class="form-control" id="walkPainFree" name="walkPainFree" min="0" placeholder="How many minutes can you walk without pain (or without pain worsening)?">
                 <input type="number" class="form-control" id="standPainFree" name="standPainFree" min="0" placeholder="How many minutes can you stand without pain (or without pain worsening)?">
                 <input type="number" class="form-control" id="sitPainFree" name="sitPainFree" min="0" placeholder="How many minutes can you sit without pain (or without pain worsening)?">
