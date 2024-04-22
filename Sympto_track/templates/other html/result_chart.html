@@ -1,0 +1,58 @@
+<!--Name of Code artifact: pain_chart.html
+Description: This code is responsible for getting the user's pain input chart
+Authors: Sarah M
+Date Creation : March 15, 2024
+Date Revised: March 28, 2024
+Preconditions: Empty Strings are not allowed.
+Postconditions: No return values. -->
+
+{% extends "base.html" %}
+
+
+{% block content%}
+     <div class="page-content">
+            <div class="page-content">
+                <!-- Existing content goes here -->
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="chart-section">
+                            <h2 class="text-center">Pain Chart</h2>
+                            <canvas id="painChart" width="150" height="100"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- Pain chart section -->
+        <div class="chart-section">
+            <canvas id="resultChart" width="150" height="100"></canvas>
+
+            <!-- JavaScript code for Chart.js -->
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                var ctx = document.getElementById('resultChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line', // Change chart type to line
+                    data: {
+                        labels: {{ labels|tojson }},
+                        datasets: [{
+                            label: 'Pain Result Level',
+                            data: {{ values|tojson }},
+                            backgroundColor: 'transparent',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
+{% endblock %}
