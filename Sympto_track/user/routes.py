@@ -3,7 +3,7 @@
 # • Description: Establishes signal to MongoDb Cluster and Sample Collections and between the frontend html pages.
 # • Programmer’s name: Sarah Martinez
 # • Data of Creation: 01.25.2023
-# • Latest Revision: 04.07.2024
+# • Latest Revision: 04.21.2024
 # • Brief description of each revision & author
 # • Preconditions: Requires my password and username created on MongoDb in order to access the cluster
 #   Username/Password are hidden and not shown. .ENV contains MongoDB URI. IP must be added to Database Cluster.
@@ -18,7 +18,7 @@
 from flask import render_template, redirect, url_for, request, jsonify, Flask, session
 from app import app
 from database import db
-from user.models import User, PainLog, Journal
+from user.models import User, PainLog, Journal, Medslist, Result
 from app import login_required
 
 
@@ -43,10 +43,29 @@ def log_pain():
     return PainLog().log_pain()
 
 
+@app.route('/user/journal_log', methods=['POST'])
+def journal_insert():
+    print("Received POST request to log journal")
+    return Journal().journal_input()
+
+
+@app.route('/user/med_log', methods=['POST'])
+def med_insert():
+    print("Received POST request to log meds")
+    return Medslist().med_input()
+
+
+@app.route('/user/log_question', methods=['POST'])
+def results_insert():
+    print("Received POST request to log results")
+    return Result().result_input()
+
+
 @app.route('/user/pain_chart')
 def pain_chart():
     pain_logs = PainLog().get_pain_logs(session['user']['_id'])
 
+    # Prepare data for chart
     labels = []
     values = []
     for log in pain_logs:
@@ -55,10 +74,25 @@ def pain_chart():
 
     return render_template('pain_chart.html', labels=labels, values=values)
 
-@app.route('/user/journal_log', methods=['POST'])
-def journal_insert():
-    print("Received POST request to log journal")  
-    return Journal().journal_input()
+
+@app.route('/user/result_chart')
+def result_chart():
+    result_logs = Result().get_results(session['user']['_id'])
+
+    # Prepare data for chart
+    labels = []
+    values = []
+    for log in result_logs:
+        labels.append(log['Date'])
+        values.append(log['totalPoints'])
+
+    return render_template('result_chart.html', labels=labels, values=values)
+
+
+@app.route('/signout', methods=['POST'])
+def sign_out():
+    User().signout()
+    return redirect('/')
 
 
 @app.route('/log/')
@@ -67,51 +101,15 @@ def log():
     return render_template('log_options_update.html')
 
 
-@app.route('/questionnaire/')
-@login_required
-def questionnaire():
-    return render_template('questionnaire_update.html')
-
-
 @app.route('/about/')
 def about():
     return render_template('about.html')
-
-
-@app.route('/meds_list/')
-@login_required
-def meds_list():
-    return render_template('MedsList.html')
-
-
-@app.route('/meds_input/')
-@login_required
-def meds_input():
-    return render_template('Meds_input.html')
-
-
-@app.route('/meds_info/')
-@login_required
-def meds_info():
-    return render_template('Med_info.html')
 
 
 @app.route('/journal/')
 @login_required
 def journal():
     return render_template('Journal_new.html')
-
-
-@app.route('/journal_input/')
-@login_required
-def journal_input():
-    return render_template('Journal_input _new.html')
-
-
-@app.route('/journal_output/')
-@login_required
-def journal_output():
-    return render_template('Journal_output_new.html')
 
 
 @app.route('/contact/')
@@ -127,3 +125,8 @@ def services():
 @app.route('/stressresources/')
 def stressresources():
     return render_template('stressresources.html')
+
+
+
+
+
