@@ -2,7 +2,7 @@
 Description: This code is This page is responsible for providing easy access to our services through intuitive buttons and a user-friendly interface, ensuring a seamless experience for our visitors.
 Authors: Freshta Z, Ava G, Sree K, Sarah M
 Date Creation : October 2, 2023
-Date Revised: April 7, 2024
+Date Revised: April 21, 2024
 Preconditions: Empty Strings are not allowed.
 Postconditions: No return values.
 -->
@@ -11,7 +11,7 @@ Postconditions: No return values.
 
 
 {% block content%}
-     
+
       <!--Service-->
       <!-- This code defines three "service" sections, each consisting of an SVG image, a title, and a description. Each section is contained within a <div> element with the class "col-lg-4" for layout purposes. The titles "Figure_1," "Figure_2," and "Figure_3" are displayed as links, and descriptions provide additional information about each service. Note that the SVG images are currently commented out and not displayed; to show the images, the comment tags around the SVG paths within the <g> elements should be removed. This code is intended to be part of a web page layout showcasing different features or offerings in a grid format. -->
 
@@ -21,45 +21,80 @@ Postconditions: No return values.
                 <div class="row justify-content-center">
                     <div class="col-md-6">
                         <div class="chart-section">
-                            <h2 class="text-center">Pain Chart</h2>
                             <canvas id="painChart" width="150" height="100"></canvas>
+                            <canvas id="resultChart" width="150" height="100"></canvas>
+
                         </div>
                     </div>
                 </div>
             </div>
+    <!-- Chart container -->
+<div class="chart-container">
     <!-- Pain chart section -->
-        <div class="chart-section">
-            <canvas id="painChart" width="150" height="100"></canvas>
+    <div class="chart-section">
+        <canvas id="painChart" width="150" height="100"></canvas>
 
-            <!-- JavaScript code for Chart.js -->
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <script>
-                var ctx = document.getElementById('painChart').getContext('2d');
-                var myChart = new Chart(ctx, {
-                    type: 'bar', // Change chart type to bar
-                    data: {
-                        labels: {{ labels|tojson }},
-                        datasets: [{
-                            label: 'Pain Level',
-                            data: {{ values|tojson }},
-                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                            borderColor: 'rgba(255, 99, 132, 1)',
-                            borderWidth: 1
+        <!-- JavaScript code for Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var ctx = document.getElementById('painChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar', // Change chart type to bar
+                data: {
+                    labels: {{ labels_bar|tojson }},
+                    datasets: [{
+                        label: 'Pain Level',
+                        data: {{ values_bar|tojson }},
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
                         }]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true
-                                }
-                            }]
-                        }
                     }
-                });
-            </script>
-        </div>
+                }
+            });
+        </script>
     </div>
+
+    <!-- Pain chart section -->
+    <div class="chart-section">
+        <canvas id="resultChart" width="150" height="100"></canvas>
+
+        <!-- JavaScript code for Chart.js -->
+        <script>
+            var ctx = document.getElementById('resultChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line', // Change chart type to line
+                data: {
+                    labels: {{ labels_line|tojson }},
+                    datasets: [{
+                        label: 'Questionnaire Result Levels',
+                        data: {{ values_line|tojson }},
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+    </div>
+</div>
 
         <!--Buttons-->
         <!-- This section of the web page is dedicated to "Buttons" and features a grid layout with four columns, each representing a button. It begins with a title ("Buttons") and a section description. Inside the section, a grid layout is established using Bootstrap's "col-lg-3" class for each column. Each column contains a placeholder image, a link, a title ("Button"), and a description ("Button"). However, the specific content, functionality, and images for these buttons are not provided in the code and should be customized separately. This code serves as a template for creating and displaying button elements on the web page. -->
@@ -76,7 +111,7 @@ Postconditions: No return values.
               <div class="col-lg-3">
                 <div class="trainer-img">
                   <img src="../static/img/journal.jpg" class="trainer-in-img" alt="">
-                </div>              
+                </div>
                 <a href="/journal/"><h3 class="trainer-title">Journal</h3></a>
                 <p class="trainer-desc">Declutter here! </p>
               </div>
@@ -89,20 +124,12 @@ Postconditions: No return values.
               </div>
               <div class="col-lg-3">
                 <div class="trainer-img">
-                  <img src="../static/img/meds.jpg" class="trainer-in-img" alt="">
+                  <img src="../static/img/med.jpg" class="trainer-in-img" alt="">
 
                 </div>
                 <a href="/meds_list/"><h3 class="trainer-title">Medications</h3></a>
                 <p class="trainer-desc">Keep track of medications here!</p>
               </div>
-
-              <!-- <div class="col-lg-3">
-                <div class="trainer-img">
-                  <img src="../static/img/stress.png" class="trainer-in-img" alt="">
-                </div>
-                <a href="#"><h3 class="trainer-title">Questionnaire</h3></a>
-                <p class="trainer-desc">Answer some simple questions!</p>
-              </div> -->
         <div class="col-lg-3">
           <div class="trainer-img" style="display: flex; justify-content: center; align-items: center;">
             <img src="../static/img/stress.jpg" class="trainer-in-img" alt="">
@@ -111,17 +138,17 @@ Postconditions: No return values.
           <p class="trainer-desc">Some extra resources for you!</p>
         </div>
 
-
-              <!-- <div class="col-lg-3">
-                <div class="trainer-img">
-                  <img src="../static/img/stress.png" class="trainer-in-img" alt="">
-                </div>
-                <a href="#"><h3 class="trainer-title">Graph</h3></a>
-                <p class="trainer-desc">See the data!</p>
-              </div> -->
             </div>
           </div>
         </div>
-
+<!-- Additional CSS code to arrange the charts side by side -->
+<style>
+.chart-container {
+    display: flex;
+}
+.chart-section {
+    flex: 1;
+}
+</style>
 
 {% endblock %}
